@@ -13,14 +13,14 @@
 				<div class="header-text text mb-0">
 					<div class="container">
 						<div class="text-center text-white ">
-							<h1 class="">Find Your Best Classified</h1>
+							<h1 class="">Pronađite oglas</h1>
 						</div>
 						<div class="row">
 							<div class="col-xl-8 col-lg-12 col-md-12 d-block mx-auto">
 								<div class="item-search-tabs">
 									<div class="item-search-menu">
 										<ul class="nav">
-											<li class=""><a href="#index1" class="active" data-toggle="tab">Classified</a></li>
+											<li class=""><a href="#index1" class="active" data-toggle="tab">Oglasi</a></li>
 										</ul>
 									</div>
 									<div class="tab-content index-search-select">
@@ -44,10 +44,10 @@
 													<div class="form-group col-xl-6 col-lg-7  col-md-12 mb-0 location">
 														<div class="row no-gutters bg-white br-2">
 															<div class="form-group  col-xl-8 col-lg-7 col-md-12 mb-0">
-																<input type="text" class="form-control border" id="job-text" placeholder="Location">
+																<input type="text" class="form-control border" id="job-text" placeholder="Naziv oglasa">
 															</div>
 															<div class="col-xl-4 col-lg-5 col-md-12 mb-0">
-																<a href="#" class="btn btn-block btn-primary fs-14"><i class="fa fa-search"></i> Search</a>
+																<a href="#" class="btn btn-block btn-primary fs-14"><i class="fa fa-search"></i> Potraži</a>
 															</div>
 														</div>
 													</div>
@@ -77,7 +77,7 @@
 																<input type="text" class="form-control border" id="employe-text" placeholder="Location">
 															</div>
 															<div class="col-xl-4 col-lg-5 col-md-12 mb-0">
-																<a href="#" class="btn btn-block btn-primary fs-14"><i class="fa fa-search"></i> Search</a>
+																<a href="#" class="btn btn-block btn-primary fs-14"><i class="fa fa-search"></i> Pretraga</a>
 															</div>
 														</div>
 													</div>
@@ -98,8 +98,8 @@
 		<section class="sptb">
 			<div class="container">
 				<div class="section-title center-block text-center">
-					<h2>Categories</h2>
-					<p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+					<h2>Kategorije</h2>
+					<p>Pregled naših najgledanijijh kategorija</p>
 				</div>
 				<div id="small-categories" class="owl-carousel owl-carousel-icons2">
 					<div class="item">
@@ -287,8 +287,8 @@
 		<section class="sptb bg-white">
 			<div class="container">
 				<div class="section-title center-block text-center">
-					<h2>Latest Ads</h2>
-					<p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+					<h2>Novi oglasi</h2>
+					<p>Pregledajte naše nove oglase</p>
 				</div>
 				<div class="row">
 					<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
@@ -823,8 +823,8 @@
 		<section class="sptb">
 			<div class="container">
 				<div class="section-title center-block text-center">
-					<h2>News</h2>
-					<p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+					<h2>Blog</h2>
+					<p>Naše najnovije objave</p>
 				</div>
 				<div id="defaultCarousel" class="owl-carousel Card-owlcarousel owl-carousel-icons">
 					<div class="item">

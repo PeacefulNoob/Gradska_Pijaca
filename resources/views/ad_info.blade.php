@@ -34,7 +34,7 @@
 											</select>
 										</div>
 										<div class="col-xl-2 col-lg-3 col-md-12 mb-0">
-											<a href="#" class="btn btn-lg btn-block btn-primary br-bl-0 br-tl-0">Search</a>
+											<a href="#" class="btn btn-lg btn-block btn-primary br-bl-0 br-tl-0">Pretraga</a>
 										</div>
 									</div>
 								</div>
@@ -222,10 +222,8 @@
 							</div>
 							<div class="card-footer">
 								<div class="icons">
-									<a href="#" class="btn btn-info icons"><i class="icon icon-share mr-1"></i> Share Ad</a>
 									<a href="#" class="btn btn-primary icons"><i class="icon icon-heart  mr-1"></i> 678</a>
-									<a href="#" class="btn btn-secondary icons"><i class="icon icon-printer  mr-1"></i> Print</a>
-								</div>
+						</div>
 							</div>
 						</div>
 						<!--/Classified Description-->
@@ -497,12 +495,7 @@
 									<a href="#" class="dribbble-bg"><i class="fa fa-dribbble"></i></a>
 								</div>
 							</div>
-							<div class="card-footer">
-								<div class="text-left">
-									<a href="#" class="btn  btn-info"><i class="fa fa-envelope"></i> Chat</a>
-									<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#contact"><i class="fa fa-user"></i> Contact Me</a>
-								</div>
-							</div>
+						
 						</div>
 						<div class="card">
 							<div class="card-header">
@@ -532,19 +525,10 @@
 								</div>
 							</div>
 						</div>
+					
 						<div class="card">
 							<div class="card-header">
-								<h3 class="card-title">Map location</h3>
-							</div>
-							<div class="card-body">
-								<div class="map-header">
-									<div class="map-header-layer" id="map2"></div>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header">
-								<h3 class="card-title">Search Ads</h3>
+								<h3 class="card-title">Pretraga oglasa</h3>
 							</div>
 							<div class="card-body">
 								<div class="form-group">
@@ -552,7 +536,7 @@
 								</div>
 								<div class="form-group">
 									<select name="country" id="select-countries" class="form-control custom-select select2-show-search">
-										<option value="1" selected>All Categories</option>
+										<option value="1" selected>Sve kategorije</option>
 										<option value="2">RealEstate</option>
 										<option value="3">Restaurant</option>
 										<option value="4">Beauty</option>
@@ -570,132 +554,20 @@
 									</select>
 								</div>
 								<div >
-									<a href="#" class="btn  btn-primary">Search</a>
+									<a href="#" class="btn  btn-primary">Pretraga</a>
 								</div>
 							</div>
 						</div>
 						
 
-						<div class="card mb-0">
-							<div class="card-header">
-								<h3 class="card-title">Latest Seller Ads</h3>
-							</div>
-							<div class="card-body">
-								<div class="rated-products">
-									<ul class="vertical-scroll">
-										<li class="item">
-											<div class="media m-0 mt-0 p-5">
-												<img class="mr-4" src="../../assets/images/products/toys.png" alt="img">
-												<div class="media-body">
-													<h4 class="mt-2 mb-1">Kids Toys</h4>
-													<span class="rated-products-ratings">
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-													</span>
-													<div class="h5 mb-0 font-weight-semibold mt-1">$17 - $29</div>
-												</div>
-											</div>
-										</li>
-										<li class="item">
-											<div class="media p-5 mt-0">
-												<img class="mr-4" src="../../assets/images/products/1.png" alt="img">
-												<div class="media-body">
-													<h4 class="mt-2 mb-1">Leather Watch</h4>
-													<span class="rated-products-ratings">
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star-o text-warning"> </i>
-													</span>
-													<div class="h5 mb-0 font-weight-semibold mt-1">$22 - $45</div>
-												</div>
-											</div>
-										</li>
-										<li class="item">
-											<div class="media p-5 mt-0">
-												<img class=" mr-4" src="../../assets/images/products/4.png" alt="img">
-												<div class="media-body">
-													<h4 class="mt-2 mb-1">Digital Watch</h4>
-													<span class="rated-products-ratings">
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star-half-o text-warning"> </i>
-													</span>
-													<div class="h5 mb-0 font-weight-semibold mt-1">$35 - $72</div>
-												</div>
-											</div>
-										</li>
-										<li class="item">
-											<div class="media p-5 mt-0">
-												<img class=" mr-4" src="../../assets/images/products/6.png" alt="img">
-												<div class="media-body">
-													<h4 class="mt-2 mb-1">Sports Shoe</h4>
-													<span class="rated-products-ratings">
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star-half-o text-warning"> </i>
-														<i class="fa fa-star-o text-warning"> </i>
-													</span>
-													<div class="h5 mb-0 font-weight-semibold mt-1">$12 - $21</div>
-												</div>
-											</div>
-										</li>
-										<li class="item">
-											<div class="media  mb-0 p-5 mt-0">
-												<img class=" mr-4" src="../../assets/images/products/8.png" alt="img">
-												<div class="media-body">
-													<h4 class="mt-2 mb-1">Ladies shoes</h4>
-													<span class="rated-products-ratings">
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star text-warning"> </i>
-														<i class="fa fa-star-o text-warning"> </i>
-														<i class="fa fa-star-o text-warning"> </i>
-													</span>
-													<div class="h5 mb-0 font-weight-semibold mt-1">$89 - $97</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+					
 					</div>
 					<!--/Right Side Content-->
 				</div>
 			</div>
 		</section>
 
-		<!-- Newsletter-->
-		<section class="sptb bg-white border-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 col-xl-6 col-md-12">
-						<div class="sub-newsletter">
-							<h3 class="mb-2"><i class="fa fa-paper-plane-o mr-2"></i> Subscribe To Our Newsletter</h3>
-							<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-						</div>
-					</div>
-					<div class="col-lg-5 col-xl-6 col-md-12">
-						<div class="input-group sub-input mt-1">
-							<input type="text" class="form-control input-lg " placeholder="Enter your Email">
-							<div class="input-group-append ">
-								<button type="button" class="btn btn-primary btn-lg br-tr-3  br-br-3">
-									Subscribe
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/Newsletter-->
+		@include('components.newsletter')
+
 
 	@endsection

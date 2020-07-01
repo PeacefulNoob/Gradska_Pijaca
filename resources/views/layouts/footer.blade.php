@@ -5,26 +5,24 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-3 col-md-12">
-								<h6>About</h6>
+								<h6>O nama</h6>
 								<hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate essequasi, veritatis totam voluptas nostrum.Lorem ipsum dolor sit amet, consectetur </p>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum .</p>
+								<p>Ova online prodavnica, osmišljena je tako da bude dostupna i jednostavna za korisćenje sa osnovnim poznavanjem  interneta.</p>
+                                <p>Kupovinom na našem sajutu postiže se najbilji odnos izmedžu cijene I kvaliteta proizvoda, podspješuje se razvoj lokalnih proizvođača.</p>
 							</div>
 							<div class="col-lg-2 col-md-12">
-								<h6>Our Services</h6>
+								<h6>Naše usluge</h6>
 								 <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
 								<ul class="list-unstyled mb-0">
-									<li><a href="javascript:;">Our Team</a></li>
-									<li><a href="javascript:;">Contact US</a></li>
-									<li><a href="javascript:;">About</a></li>
-									<li><a href="javascript:;">Services</a></li>
+									<li><a href="javascript:;">Kontakt</a></li>
+									<li><a href="javascript:;">O nama</a></li>
 									<li><a href="javascript:;">Blog</a></li>
 									<li><a href="javascript:;">Terms and Services</a></li>
 								</ul>
 							</div>
 
 							<div class="col-lg-3 col-md-12">
-								<h6>Contact</h6>
+								<h6>Kontakt</h6>
 								<hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
 								<ul class="list-unstyled mb-0">
 									<li>
@@ -33,10 +31,10 @@
 									<li>
 										<a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> info12323@example.com</a></li>
 									<li>
-										<a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 01 234 567 88</a>
+										<a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 069 964 834</a>
 									</li>
 									 <li>
-										<a href="#"><i class="fa fa-print mr-3 text-primary"></i> + 01 234 567 89</a>
+										<a href="#"><i class="fa fa-print mr-3 text-primary"></i> + 069 964 834</a>
 									</li>
 								</ul>
 								<ul class="list-unstyled list-inline mt-3">
@@ -63,13 +61,13 @@
 								</ul>
 							</div>
 							<div class="col-lg-4 col-md-12">
-								<h6>Subscribe</h6>
+								<h6>Pretplatite se</h6>
 								<hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
 								<div class="clearfix"></div>
 								<div class="input-group w-70">
 									<input type="text" class="form-control br-tl-3  br-bl-3 " placeholder="Email">
 									<div class="input-group-append ">
-										<button type="button" class="btn btn-primary br-tr-3  br-br-3"> Subscribe </button>
+										<button type="button" class="btn btn-primary br-tr-3  br-br-3"> Pretplatite se </button>
 									</div>
 								</div>
 								
@@ -82,7 +80,7 @@
 					<div class="container">
 						<div class="row d-flex">
 							<div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-								Copyright © 2019 <a href="#" class="fs-14 text-primary">Claylist</a>. Designed by <a href="#" class="fs-14 text-primary">Spruko</a> All rights reserved.
+								Copyright © 2019 <a href="#" class="fs-14 text-primary">QQRIQ</a>
 							</div>
 						</div>
 					</div>

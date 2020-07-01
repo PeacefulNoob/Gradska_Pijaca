@@ -156,60 +156,11 @@
 									</div>
 								</div>
 							</div>
-							<div class="card-header border-top">
-								<h3 class="card-title">Price Range</h3>
-							</div>
-							<div class="card-body">
-								<h6>
-								   <label for="price">Price Range:</label>
-								   <input type="text" id="price">
-								</h6>
-								<div id="mySlider"></div>
-							</div>
-							<div class="card-header border-top">
-								<h3 class="card-title">Condition</h3>
-							</div>
-							<div class="card-body">
-								<div class="filter-product-checkboxs">
-									<label class="custom-control custom-checkbox mb-2">
-										<input type="checkbox" class="custom-control-input" name="checkbox1" value="option1">
-										<span class="custom-control-label">
-											New
-										</span>
-									</label>
-									<label class="custom-control custom-checkbox mb-0">
-										<input type="checkbox" class="custom-control-input" name="checkbox2" value="option2">
-										<span class="custom-control-label">
-											Used
-										</span>
-									</label>
-								</div>
-							</div>
-							<div class="card-header border-top">
-								<h3 class="card-title">Posted By</h3>
-							</div>
-							<div class="card-body">
-								<div class="filter-product-checkboxs">
-									<label class="custom-control custom-checkbox mb-2">
-										<input type="checkbox" class="custom-control-input" name="checkbox1" value="option1">
-										<span class="custom-control-label">
-											Dealer
-										</span>
-									</label>
-									<label class="custom-control custom-checkbox mb-2">
-										<input type="checkbox" class="custom-control-input" name="checkbox2" value="option2">
-										<span class="custom-control-label">
-											Individual
-										</span>
-									</label>
-									<label class="custom-control custom-checkbox mb-0">
-										<input type="checkbox" class="custom-control-input" name="checkbox2" value="option2">
-										<span class="custom-control-label">
-											Reseller
-										</span>
-									</label>
-								</div>
-							</div>
+						
+						
+						
+						
+							
 							<div class="card-footer">
 								<a href="#" class="btn btn-secondary btn-block">Apply Filter</a>
 							</div>
@@ -230,15 +181,7 @@
 													<li class=""><a href="#tab-11" class="active show" data-toggle="tab" title="List style"><i class="fa fa-list"></i></a></li>
 													<li><a href="#tab-12" data-toggle="tab" class="" title="Grid"><i class="fa fa-th"></i></a></li>
 												</ul>
-												<div class="d-flex">
-													<label class="mr-2 mt-1 mb-sm-1">Sort By:</label>
-													<select name="item" class="form-control select-sm w-70">
-														<option value="1">Latest</option>
-														<option value="2">Oldest</option>
-														<option value="3">Price:Low-to-High</option>
-														<option value="5">Price:Hight-to-Low</option>
-													</select>
-												</div>
+											
 											</div>
 										</div>
 									</div>
@@ -889,30 +832,6 @@
 			</div>
 		</section>
 		<!--/Add Listings-->
-
-		<!-- Newsletter-->
-		<section class="sptb bg-white border-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 col-xl-6 col-md-12">
-						<div class="sub-newsletter">
-							<h3 class="mb-2"><i class="fa fa-paper-plane-o mr-2"></i> Subscribe To Our Newsletter</h3>
-							<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-						</div>
-					</div>
-					<div class="col-lg-5 col-xl-6 col-md-12">
-						<div class="input-group sub-input mt-1">
-							<input type="text" class="form-control input-lg " placeholder="Enter your Email">
-							<div class="input-group-append ">
-								<button type="button" class="btn btn-primary btn-lg br-tr-3  br-br-3">
-									Subscribe
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/Newsletter-->
+		@include('components.newsletter')
 
 @endsection

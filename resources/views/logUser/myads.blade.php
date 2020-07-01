@@ -1,13 +1,16 @@
+@extends('layouts.main')
+
+@section('content')
 <!--Breadcrumb-->
 <section>
     <div class="bannerimg cover-image bg-background3" data-image-src="../../assets/images/banners/banner2.jpg">
         <div class="header-text mb-0">
             <div class="text-center text-white">
-                <h1 class="">My Ads</h1>
+                <h1 class="">Moji Oglasi</h1>
                 <ol class="breadcrumb text-center">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">My Dashboard </a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">My Ads</li>
+                    <li class="breadcrumb-item"><a href="#">Početna</a></li>
+                    <li class="breadcrumb-item"><a href="#">Korisnički panel </a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Moji Oglasi</li>
                 </ol>
             </div>
         </div>
@@ -22,7 +25,7 @@
             <div class="col-xl-3 col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">My Dashboard</h3>
+                        <h3 class="card-title">Korisnički panel</h3>
                     </div>
                     <div class="card-body text-center item-user border-bottom">
                         <div class="profile-pic">
@@ -38,119 +41,40 @@
                     </div>
                     <div class="item1-links  mb-0">
                         <a href="mydash.html" class="d-flex border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-user"></i></span> Edit Profile
+                            <span class="icon1 mr-3"><i class="icon icon-user"></i></span> Uredi profil
                         </a>
                         <a href="myads.html" class="active  d-flex  border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> My Ads
+                            <span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Moji Oglasi
                         </a>
-                        <a href="myfavorite.html" class=" d-flex border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-heart"></i></span> My Favorite
-                        </a>
-                        <a href="manged.html" class="d-flex  border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-folder-alt"></i></span> Managed Ads
-                        </a>
-                        <a href="payments.html" class=" d-flex  border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-credit-card"></i></span> Payments
-                        </a>
-                        <a href="orders.html" class="d-flex  border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-basket"></i></span> Orders
-                        </a>
-                        <a href="tips.html" class="d-flex border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-game-controller"></i></span> Safety Tips
-                        </a>
-                        <a href="settings.html" class="d-flex border-bottom">
-                            <span class="icon1 mr-3"><i class="icon icon-settings"></i></span> Settings
+                        <a href="/ad_post2" class=" d-flex  border-bottom">
+                            <span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Dodaj oglas
                         </a>
                         <a href="#" class="d-flex">
                             <span class="icon1 mr-3"><i class="icon icon-power"></i></span> Logout
                         </a>
                     </div>
                 </div>
-                <div class="card my-select">
-                    <div class="card-header">
-                        <h3 class="card-title">Search Ads</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="text" placeholder="What are you looking for?">
-                        </div>
-                        <div class="form-group">
-                            <select name="country" id="select-countries"
-                                class="form-control custom-select select2-show-search">
-                                <option value="1" selected="">All Categories</option>
-                                <option value="2">RealEstate</option>
-                                <option value="3">Restaurant</option>
-                                <option value="4">Beauty</option>
-                                <option value="5">Jobs</option>
-                                <option value="6">Services</option>
-                                <option value="7">Vehicle</option>
-                                <option value="8">Education</option>
-                                <option value="9">Electronics</option>
-                                <option value="10">Pets &amp; Animals</option>
-                                <option value="11">Computer</option>
-                                <option value="12">Mobile</option>
-                                <option value="13">Events</option>
-                                <option value="14">Travel</option>
-                                <option value="15">Clothing</option>
-                            </select>
-                        </div>
-                        <div class="">
-                            <a href="#" class="btn  btn-primary">Search</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-xl-0">
-                    <div class="card-header">
-                        <h3 class="card-title">Safety Tips For Buyers</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled widget-spec  mb-0">
-                            <li class="">
-                                <i class="fa fa-check text-success" aria-hidden="true"></i> Meet Seller at public Place
-                            </li>
-                            <li class="">
-                                <i class="fa fa-check text-success" aria-hidden="true"></i> Check item before you buy
-                            </li>
-                            <li class="">
-                                <i class="fa fa-check text-success" aria-hidden="true"></i> Pay only after collecting
-                                item
-                            </li>
-                            <li class="ml-5 mb-0">
-                                <a href="tips.html"> View more..</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+              
+             
             </div>
             <div class="col-xl-9 col-lg-12 col-md-12">
                 <div class="card mb-0">
                     <div class="card-header">
-                        <h3 class="card-title">My Ads</h3>
+                        <h3 class="card-title">Moji Oglasi</h3>
                     </div>
                     <div class="card-body">
                         <div class="ads-tabs">
-                            <div class="tabs-menus">
-                                <!-- Tabs -->
-                                <ul class="nav panel-tabs">
-                                    <li class=""><a href="#tab1" class="active" data-toggle="tab">All Ads (20)</a></li>
-                                    <li><a href="#tab2" data-toggle="tab">Published (08)</a></li>
-                                    <li><a href="#tab3" data-toggle="tab">Featured (05)</a></li>
-                                    <li><a href="#tab4" data-toggle="tab">Sold (03)</a></li>
-                                    <li><a href="#tab5" data-toggle="tab">Active (03)</a></li>
-                                    <li><a href="#tab6" data-toggle="tab">Expired (01)</a></li>
-                                </ul>
-                            </div>
+                         
                             <div class="tab-content">
                                 <div class="tab-pane active table-responsive border-top userprof-tab" id="tab1">
                                     <table class="table table-bordered table-hover mb-0 text-nowrap">
                                         <thead>
                                             <tr>
                                                 <th></th>
-                                                <th>Item</th>
-                                                <th>Category</th>
-                                                <th>Price</th>
-                                                <th>Ad Status</th>
-                                                <th>Action</th>
+                                                <th>Oglas</th>
+                                                <th>Kategorija</th>
+                                                <th>Status</th>
+                                                <th>Opcija</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -2002,137 +1926,4 @@
     </div>
 </section>
 <!--User Dashboard-->
-
-<!-- Newsletter-->
-<section class="sptb bg-white border-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 col-xl-6 col-md-12">
-                <div class="sub-newsletter">
-                    <h3 class="mb-2"><i class="fa fa-paper-plane-o mr-2"></i> Subscribe To Our Newsletter</h3>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                </div>
-            </div>
-            <div class="col-lg-5 col-xl-6 col-md-12">
-                <div class="input-group sub-input mt-1">
-                    <input type="text" class="form-control input-lg " placeholder="Enter your Email">
-                    <div class="input-group-append ">
-                        <button type="button" class="btn btn-primary btn-lg br-tr-3  br-br-3">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/Newsletter-->
-
-<!--Footer Section-->
-<section>
-    <footer class="bg-dark-purple text-white">
-        <div class="footer-main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-12">
-                        <h6>About</h6>
-                        <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident
-                            voluptate essequasi, veritatis totam voluptas nostrum.Lorem ipsum dolor sit amet,
-                            consectetur </p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum .</p>
-                    </div>
-                    <div class="col-lg-2 col-md-12">
-                        <h6>Our Services</h6>
-                        <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                        <ul class="list-unstyled mb-0">
-                            <li><a href="javascript:;">Our Team</a></li>
-                            <li><a href="javascript:;">Contact US</a></li>
-                            <li><a href="javascript:;">About</a></li>
-                            <li><a href="javascript:;">Services</a></li>
-                            <li><a href="javascript:;">Blog</a></li>
-                            <li><a href="javascript:;">Terms and Services</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-12">
-                        <h6>Contact</h6>
-                        <hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#"><i class="fa fa-home mr-3 text-primary"></i> New York, NY 10012, US</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> info12323@example.com</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 01 234 567 88</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-print mr-3 text-primary"></i> + 01 234 567 89</a>
-                            </li>
-                        </ul>
-                        <ul class="list-unstyled list-inline mt-3">
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-                                    <i class="fa fa-facebook bg-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-                                    <i class="fa fa-twitter bg-info"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-                                    <i class="fa fa-google-plus bg-danger"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-                                    <i class="fa fa-linkedin bg-linkedin"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <h6>Subscribe</h6>
-                        <hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                        <div class="clearfix"></div>
-                        <div class="input-group w-70">
-                            <input type="text" class="form-control br-tl-3  br-bl-3 " placeholder="Email">
-                            <div class="input-group-append ">
-                                <button type="button" class="btn btn-primary br-tr-3  br-br-3"> Subscribe </button>
-                            </div>
-                        </div>
-                        <h6 class="mb-0 mt-5">Payments</h6>
-                        <hr class="deep-purple  text-primary accent-2 mb-2 mt-3 d-inline-block mx-auto">
-                        <div class="clearfix"></div>
-                        <ul class="footer-payments">
-                            <li class="pl-0"><a href="javascript:;"><i class="fa fa-cc-amex text-muted"
-                                        aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:;"><i class="fa fa-cc-visa text-muted" aria-hidden="true"></i></a>
-                            </li>
-                            <li><a href="javascript:;"><i class="fa fa-credit-card-alt text-muted"
-                                        aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:;"><i class="fa fa-cc-mastercard text-muted"
-                                        aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:;"><i class="fa fa-cc-paypal text-muted" aria-hidden="true"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-dark-purple text-white p-0">
-            <div class="container">
-                <div class="row d-flex">
-                    <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                        Copyright © 2019 <a href="#" class="fs-14 text-primary">Claylist</a>. Designed by <a href="#"
-                            class="fs-14 text-primary">Spruko</a> All rights reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</section>
+@endsection

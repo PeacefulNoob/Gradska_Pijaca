@@ -8,10 +8,10 @@
 				<div class="header-text mb-0">
 					<div class="container">
 						<div class="text-center text-white ">
-							<h1 class="">About Us</h1>
+							<h1 class="">O nama</h1>
 							<ol class="breadcrumb text-center">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item active text-white" aria-current="page">About Us</li>
+								<li class="breadcrumb-item"><a href="#">Početna</a></li>
+								<li class="breadcrumb-item active text-white" aria-current="page">O nama</li>
 							</ol>
 						</div>
 					</div>
@@ -24,12 +24,11 @@
 		<section class="sptb">
 			<div class="container">
 				<div class="text-justify">
-					<h2 class="mb-4">Why Claylist?</h2>
-					<h4 class="leading-normal">Majority have suffered alteration in some form, by injected humor</h4>
-					<p class="leading-normal">There are many variations of passages of Lorem Ipsum available, but the majority have suffered  by injected humour, or randomised words which don't look even slightly believable.
-					If you are going to use a passage of Lorem Ipsum, you need to as necessary All the Lorem Ipsum generators on the Internet tend to repeat</p>
-					<p class="leading-normal">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-					<p class="leading-normal mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h2 class="mb-4">Zašto mi?</h2>
+					<h4 class="leading-normal">Očigledno je da je naše tržište prezasićeno uvezenim, jeftinim proizvodima, koji se industrijski masovno proizvode, bez poznatog načina proizvodnje a sa ciljem ostvarenja dobiti na uštrb kvaliteta. </h4>
+					<p class="leading-normal">Naš cilj je približiti rad malih i srednjih poljoprivrednih preduzeća i gazdinstava koji količinama i tehnologizacijom ne mogu parirati veletrgovinama. Preko naše “Gradske pijace” će se dobiti mogućnost prodaje i direktne komunikacije sa kupcima. Ovaj način prodaje i kupovine omogućava lakši dolazak do svježih, sezonskih, lokalno proizvedenih i kvalitetnih poljoprivrednih proizvoda. </p>
+					<p class="leading-normal">Korišćenjem gradske pijace ostvaruju se bolji uslovi kupoprodaje - direktan kontakt kupca i prodavca, izbor mjesta isporuke, načina plaćanja i povoljnije cijene, ostvarujući na taj način optimalan odnos između cijene i kvaliteta.</p>
+					<p class="leading-normal mb-0">Preko “Gradske pijace” ostavuje se uvid u trenutni asortiman poljoprivrednih proizvoda u okruzenju, a onda se i kroz nekoliko klikova oni i naruce. Pri čemu kroz direktan kontakt kupca i proizvođača oni imaju mogućnost upravljanja vlastitim vremenom.</p>
 				</div>
 			</div>
 		</section>
@@ -39,8 +38,8 @@
 		<section class="sptb bg-white">
 			<div class="container">
 				<div class="section-title center-block text-center">
-					<h2>How It Works?</h2>
-					<p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+					<h2>Kako poslujemo?</h2>
+					<p>Kupcima koji se registruju na “Gradsku pijacu” omogućuje se :</p>
 				</div>
 				<div class="row">
 					<div class="col-lg-3 col-md-6 col-sm-6">
@@ -51,8 +50,8 @@
 										<img src="../../assets/images/products/about/employees.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
-										<h4 class="font-weight-semibold mb-2">Register</h4>
-										<p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+										<h4 class="font-weight-semibold mb-2">Pretraga</h4>
+										<p class="text-muted mb-0">Pronalaženje željenih poljoprivrednih proizvoda ili proizvođača u okruženju kupca </p>
 									</div>
 								</div>
 							</div>
@@ -66,8 +65,8 @@
 										<img src="../../assets/images/products/about/megaphone.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
-										<h4 class="font-weight-semibold mb-2">Create Account</h4>
-										<p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+										<h4 class="font-weight-semibold mb-2">Kontakt</h4>
+										<p class="text-muted mb-0">Upoznavanje i kontakt sa poljopriverdnim proizvođačima i bolji uvid u način i kvalitet proizvodnje</p>
 									</div>
 								</div>
 							</div>
@@ -81,8 +80,8 @@
 										<img src="../../assets/images/products/about/pencil.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
-										<h4 class="font-weight-semibold mb-2">Add Posts</h4>
-										<p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+										<h4 class="font-weight-semibold mb-2">Kupovina</h4>
+										<p class="text-muted mb-0">Kupovinu svežih, sezonskih proizvoda bez dodatnih tretiranja radi skladištenja</p>
 									</div>
 								</div>
 							</div>
@@ -96,8 +95,8 @@
 										<img src="../../assets/images/products/about/coins.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
-										<h4 class="font-weight-semibold mb-2">Get Earnings</h4>
-										<p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+										<h4 class="font-weight-semibold mb-2">Rezervacija</h4>
+										<p class="text-muted mb-0">Izbor mjesta i vremena preuzimanja narudžbe i način plaćanja</p>
 									</div>
 								</div>
 							</div>
@@ -114,8 +113,8 @@
 		<section class="sptb">
 			<div class="container">
 				<div class="section-title center-block text-center">
-					<h2>Why Choose Us?</h2>
-					<p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+					<h2>Zašto “Gradska pijaca”?</h2>
+					<p>Kupovinom na našem sajutu postiže se najbilji odnos izmedžu cijene I kvaliteta proizvoda, podspješuje se razvoj lokalnih proizvođača.</p>
 				</div>
 				<div class="row ">
 					<div class="col-md-6 col-lg-4 features">
@@ -201,32 +200,10 @@
 		</section>
 		<!--/section-->
 
-		
+		@include('components.newsletter')
+
 		
 
-		<!-- Newsletter-->
-		<section class="sptb border-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 col-xl-6 col-md-12">
-						<div class="sub-newsletter">
-							<h3 class="mb-2"><i class="fa fa-paper-plane-o mr-2"></i> Subscribe To Our Newsletter</h3>
-							<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-						</div>
-					</div>
-					<div class="col-lg-5 col-xl-6 col-md-12">
-						<div class="input-group sub-input mt-1">
-							<input type="text" class="form-control input-lg " placeholder="Enter your Email">
-							<div class="input-group-append ">
-								<button type="button" class="btn btn-primary btn-lg br-tr-3  br-br-3">
-									Subscribe
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/Newsletter-->
+
 
 	@endsection
