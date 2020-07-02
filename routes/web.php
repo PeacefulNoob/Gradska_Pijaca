@@ -12,59 +12,47 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('site','SiteController');  
+Route::resource('categories','CategoriesController');  
+Route::resource('admin','HomeController'); 
+Route::resource('ad','AdController');  
+Route::resource('user','UsersController');  
 
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/', 'SiteController@index')->name('welcome');
 
-Route::get('/ad_info', function () {
-    return view('ad_info');
-});
-
-Route::get('/all_ads', function () {
-    return view('all_ads');
-});
 
 Route::get('/contact', function () {
     return view('contact');
 });
+   
 
-Route::get('/', function () {
-    return view('index');
-});
 Route::get('/blog_details', function () {
     return view('blog_details');
 });
 Route::get('/blog_grid', function () {
     return view('blog_grid');
 
-/* user */
-});
-Route::get('/ad_post', function () {
-    return view('logUser.ad_posts');
+
 });
 
-Route::get('/ad_post2', function () {
-    return view('logUser.ad_posts2');
-});
-Route::get('/myads', function () {
-    return view('logUser.myads');
-});
-Route::get('/mydash', function () {
-    return view('logUser.mydash');
-});
-
-/* admin */
-Route::get('/ads', function () {
-    return view('admin.Ads');
-});
-Route::get('/index', function () {
-    return view('admin.index');
-});
-Route::get('/users', function () {
-    return view('admin.users-all');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(
+    ['prefix' => 'admin', 'middleware' => ['auth', 'admin']],
+    function () { 
+        Route::get('/users_all', 'HomeController@allUsers');
+    }
+);
+
+Route::group(
+    ['prefix' => 'user', 'middleware' => ['auth', 'approved']],
+    function () {
+        Route::get('/ad_blog', function () {
+            return view('logUser.ad_blog');
+        });
+    }
+);

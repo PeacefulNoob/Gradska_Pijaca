@@ -16,25 +16,50 @@
                     <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
                         <div class="top-bar-right">
                             <ul class="custom">
-                                <li>
-                                    <a href="register.html" class="text-dark"><i class="fa fa-user mr-1"></i> <span>Registrujte se</span></a>
+                                @guest
+                                <li class="nav-item">
+                                    <a href="/login" class="text-dark"><i class="fa fa-sign-in mr-1"></i> <span>Login</span></a>
                                 </li>
-                                <li>
-                                    <a href="login.html" class="text-dark"><i class="fa fa-sign-in mr-1"></i> <span>Login</span></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="text-dark" data-toggle="dropdown"><i class="fa fa-home mr-1"></i><span> Podešavanja</span></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a href="/mydash" class="dropdown-item" >
-                                            <i class="dropdown-icon icon icon-user"></i> Moj Profil
-                                        </a>
-                             
-                                   
-                                        <a class="dropdown-item" href="#">
-                                            <i class="dropdown-icon icon icon-power"></i> Log out
-                                        </a>
-                                    </div>
-                                </li>
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a href="/register" class="text-dark"><i class="fa fa-user mr-1"></i> <span>Registrujte se</span></a>
+                                    </li>
+                                @endif
+                            @else  
+                            @if(Auth::user()->isAdmin())
+                            <li class="dropdown">
+                                <a href="/admin" class="text-dark" ><i class="fa fa-home mr-1"></i><span> Podešavanja</span></a>
+                            
+                            </li>
+                            @endif    
+                            @if(Auth::user()->isApproved())
+                            <li class="dropdown">
+                                <a href="/user" class="text-dark" ><i class="fa fa-home mr-1"></i><span> Podešavanja</span></a>
+
+                            </li>
+                            @endif    
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                       
+                        @endguest 
+
+                               
+                               
                             </ul>
                         </div>
                     </div>

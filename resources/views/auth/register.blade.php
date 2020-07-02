@@ -44,6 +44,17 @@
                                             </span>
                                         @enderror
                                 </div>
+                                <div class="name">
+                                    <label>Last name</label>
+
+                                        <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
+        
+                                        @error('last_name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
                                 <div class="mail">
                                    
                                     <label>Mail or Username</label>
@@ -66,8 +77,12 @@
                                         </span>
                                     @enderror
 
-
                                 </div>
+                                <div class="passwd">
+                                    <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                </div>
+        
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>

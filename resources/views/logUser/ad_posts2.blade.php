@@ -10,7 +10,7 @@
 						<div class="text-center text-white">
 							<h1>Novi Oglas</h1>
 							<ol class="breadcrumb text-center">
-								<li class="breadcrumb-item"><a href="#">Početna</a></li>
+								<li class="breadcrumb-item"><a href="/user">Početna</a></li>
 								<li class="breadcrumb-item active text-white" aria-current="page">Novi Oglas</li>
 							</ol>
 						</div>
@@ -35,17 +35,17 @@
 										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
 										<img src="../../assets/images/faces/male/25.jpg" class="brround" alt="user">
 									</div>
-									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
+									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h4></a>
 								</div>
 							</div>
 							<div class="item1-links  mb-0">
-								<a href="/mydash" class="active d-flex border-bottom">
+								<a href="/user" class="active d-flex border-bottom">
 									<span class="icon1 mr-3"><i class="icon icon-user"></i></span> Uredi profil
 								</a>
-								<a href="/myads" class=" d-flex  border-bottom">
+							<a href="/user/{{ Auth::user()->id}}" class=" d-flex  border-bottom">
 									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Moji Oglasi
 								</a>
-								<a href="/ad_post2" class=" d-flex  border-bottom">
+								<a href="/ad/create" class=" d-flex  border-bottom">
 									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Dodaj oglas
 								</a>
 							
@@ -63,7 +63,8 @@
 								<h3 class="card-title">Novi Oglas</h3>
 							</div>
 							<div class="card-body">
-								<form id="commentForm" method="get" class="form-horizontal mb-0">
+								<form action="{{ route('ad.store')}}"  method="POST" enctype="multipart/form-data"  id="commentForm"  class="form-horizontal mb-0">
+									@csrf>
 									<div id="rootwizard" class="border pt-0">
 										<ul class="nav nav-tabs nav-justified">
 											<li class="nav-item"><a href="#first" data-toggle="tab" class="nav-link font-bold">Osnovno</a></li>
@@ -75,34 +76,25 @@
 												<div class="control-group form-group">
 													<div class="form-group">
 														<label class="form-label text-dark">Naziv oglasa</label>
-														<input type="text" class="form-control required Title" placeholder="">
+														<input type="text" name="title" class="form-control required Title" placeholder="">
 													</div>
 												</div>
 												<div class="control-group form-group">
 													<div class="form-group">
 														<label class="form-label text-dark">Lokacija</label>
-														<input type="text" class="form-control required location" placeholder="">
+														<input type="text" name="location"  class="form-control required location" placeholder="">
 													</div>
 												</div>
 												<div class="control-group form-group">
 													<div class="form-group">
 														<label class="form-label text-dark">Kategorija</label>
-														<select class="form-control custom-select required category">
+														<select name = "cat_id" class="form-control custom-select required category">
 															<option value="0">Izaberite</option>
-															<option value="1">RealEstate</option>
-															<option value="2">Restaurant</option>
-															<option value="3">Health & Fitness</option>
-															<option value="4">Travel</option>
-															<option value="5">Computer</option>
-															<option value="6">Electronics</option>
-															<option value="7">Jobs</option>
-															<option value="8">Beauty & Spa</option>
-															<option value="9">Clothing</option>
-															<option value="10">Home & Furniture</option>
-															<option value="11">Vehicles</option>
-															<option value="12">Education</option>
-															<option value="13">Services</option>
-															<option value="14">Events</option>
+															@foreach ($categories as $category)
+																
+														
+															<option value="{{$category->id}}">{{$category->title}}</option>
+															@endforeach
 														</select>
 													</div>
 												</div>
@@ -112,40 +104,19 @@
 											
 												<div class="control-group form-group">
 													<label class="form-label text-dark">Opis</label>
-													<textarea class="form-control required" name="example-textarea-input" rows="6" placeholder="Unesite opis oglasa.."></textarea>
+													<textarea class="form-control required" name="about" rows="6" placeholder="Unesite opis oglasa.."></textarea>
 												</div>
 												<div class="control-group form-group">
 													<div class="custom-file">
-														<input type="file" class="custom-file-input required" name="example-file-input-custom">
+														<input type="file" class="custom-file-input required" name="image">
 														<label class="custom-file-label">Unesite slike</label>
 													</div>
 												</div>
 										
 											</div>
-											<div class="tab-pane fade" id="third">
-												<div class="control-group form-group">
-													<label class="form-label">Name</label>
-													<input type="text" class="form-control required" placeholder="Name">
-												</div>
-												<div class="control-group form-group">
-													<label class="form-label">Email</label>
-													<input type="email" class="form-control required" placeholder="Email Address">
-												</div>
-												<div class="control-group form-group">
-													<label class="form-label">Phone Number</label>
-													<input type="number" class="form-control required" placeholder="Number">
-												</div>
-												<div class="control-group form-group mb-0">
-													<label class="form-label">Address</label>
-													<input type="text" class="form-control required" placeholder="Address">
-												</div>
-											</div>
-											
-											<ul class="list-inline wizard mb-0 mt-4">
-												<li class="previous list-inline-item"><a href="#" class="btn btn-secondary mb-0 waves-effect waves-light">Nazad</a>
-												</li>
-												<li class="next list-inline-item float-right"><a href="#" class="btn btn-primary  mb-0 mr-2 waves-effect waves-light">Nastavi</a></li>
-											</ul>
+									
+											<button type="submit" id="uploadB">DODAJ</button>
+										
 										</div>
 									</div>
 								</form>

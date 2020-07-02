@@ -9,9 +9,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
-								<div class="text-center text-white ">
-									<h1 class=""><span class="font-weight-bold">16,25,365</span> Ads Available In Hyderabad</h1>
-								</div>
+								
 								<div class="search-background bg-transparent">
 									<div class="form row no-gutters ">
 										<div class="form-group  col-xl-4 col-lg-3 col-md-12 mb-0 bg-white ">
@@ -51,10 +49,9 @@
 		<div class="bg-white border-bottom">
 			<div class="container">
 				<div class="page-header">
-					<h4 class="page-title">Classifieds list Right</h4>
+					<h4 class="page-title">{{}}</h4>
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Pages</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Classifieds list Right</li>
 					</ol>
 				</div>

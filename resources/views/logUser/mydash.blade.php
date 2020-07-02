@@ -35,17 +35,17 @@
 										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
 										<img src="../../assets/images/faces/male/25.jpg" class="brround" alt="user">
 									</div>
-									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
+									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h4></a>
 								</div>
 							</div>
 							<div class="item1-links  mb-0">
-								<a href="/mydash" class="active d-flex border-bottom">
+								<a href="/user" class="active d-flex border-bottom">
 									<span class="icon1 mr-3"><i class="icon icon-user"></i></span> Uredi profil
 								</a>
-								<a href="/myads" class=" d-flex  border-bottom">
+								<a href="/user/{{ Auth::user()->id}}" class=" d-flex  border-bottom">
 									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Moji Oglasi
 								</a>
-								<a href="/ad_post2" class=" d-flex  border-bottom">
+								<a href="/ad/create" class=" d-flex  border-bottom">
 									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Dodaj oglas
 								</a>
 								<a href="#" class="d-flex">
@@ -56,7 +56,11 @@
 					
 						
 					</div>
+				
 					<div class="col-xl-9 col-lg-12 col-md-12">
+						<form action="{{ route('user.update',  Auth::user()->id) }}"  method="POST" enctype="multipart/form-data">
+							@method('PUT')
+							@csrf
 						<div class="card mb-0">
 							<div class="card-header">
 								<h3 class="card-title">Uredi Korisnički Profil</h3>
@@ -66,81 +70,76 @@
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Ime</label>
-											<input type="text" class="form-control" placeholder="Ime">
+											<input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Prezime</label>
-											<input type="text" class="form-control" placeholder="Prezime">
+											<input type="text"  name="last_name" class="form-control" value="{{ Auth::user()->last_name }}">
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Email adresa</label>
-											<input type="email" class="form-control" placeholder="Email">
+											<input type="email" name="email"  class="form-control" value="{{ Auth::user()->email }}">
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Telefonski broj</label>
-											<input type="number" class="form-control" placeholder="Broj">
+											<input type="number"  name="phoneNo" class="form-control" value="{{ Auth::user()->phoneNo }}">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<label class="form-label">Adresa</label>
-											<input type="text" class="form-control" placeholder="Adresa">
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-4">
-										<div class="form-group">
 											<label class="form-label">Grad</label>
-											<input type="text" class="form-control" placeholder="Grad">
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3">
-										<div class="form-group">
-											<label class="form-label">Poštanski broj</label>
-											<input type="number" class="form-control" placeholder="ZIP kod">
+											<input type="text"  name="city" class="form-control" value="{{ Auth::user()->city }}">
 										</div>
 									</div>
 									
-									<div class="col-sm-6 col-md-6">
+									<div class="col-sm-6 col-md-3">
+										<div class="form-group">
+											<label class="form-label">Poštanski broj</label>
+											<input type="number" name="zip"  class="form-control" value="{{ Auth::user()->zip }}">
+										</div>
+									</div>
+									
+						{{-- 			<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Facebook</label>
-											<input type="text" class="form-control" placeholder="https://www.facebook.com/">
+											<input type="text" class="form-control" value="https://www.facebook.com/">
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Google</label>
-											<input type="text" class="form-control" placeholder="https://www.google.com/">
+											<input type="text" class="form-control" value="https://www.google.com/">
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Twitter</label>
-											<input type="text" class="form-control" placeholder="https://twitter.com/">
+											<input type="text" class="form-control" value="https://twitter.com/">
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Pinterest</label>
-											<input type="text" class="form-control" placeholder="https://in.pinterest.com/">
+											<input type="text" class="form-control" value="https://in.pinterest.com/">
 										</div>
-									</div>
+									</div> --}}
 									<div class="col-md-12">
 										<div class="form-group">
 											<label class="form-label">O meni</label>
-											<textarea rows="5" class="form-control" placeholder="Unesi opis "></textarea>
+											<textarea rows="5" name="about"  class="form-control" value="{{ Auth::user()->about }}"></textarea>
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="form-group mb-0">
 											<label class="form-label">Slika</label>
 											<div class="custom-file">
-												<input type="file" class="custom-file-input" name="example-file-input-custom">
+												<input type="file"  name="image" class="custom-file-input" >
 												<label class="custom-file-label">Izaberite sliku</label>
 											</div>
 										</div>
@@ -153,6 +152,8 @@
 						</div>
 					</div>
 				</div>
+				</form>
+				
 			</div>
 		</section>
 		<!--/User Dashboard-->

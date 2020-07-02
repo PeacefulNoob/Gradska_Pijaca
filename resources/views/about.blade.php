@@ -25,7 +25,7 @@
 			<div class="container">
 				<div class="text-justify">
 					<h2 class="mb-4">Zašto mi?</h2>
-					<h4 class="leading-normal">Očigledno je da je naše tržište prezasićeno uvezenim, jeftinim proizvodima, koji se industrijski masovno proizvode, bez poznatog načina proizvodnje a sa ciljem ostvarenja dobiti na uštrb kvaliteta. </h4>
+					<p class="leading-normal">Očigledno je da je naše tržište prezasićeno uvezenim, jeftinim proizvodima, koji se industrijski masovno proizvode, bez poznatog načina proizvodnje a sa ciljem ostvarenja dobiti na uštrb kvaliteta. </p>
 					<p class="leading-normal">Naš cilj je približiti rad malih i srednjih poljoprivrednih preduzeća i gazdinstava koji količinama i tehnologizacijom ne mogu parirati veletrgovinama. Preko naše “Gradske pijace” će se dobiti mogućnost prodaje i direktne komunikacije sa kupcima. Ovaj način prodaje i kupovine omogućava lakši dolazak do svježih, sezonskih, lokalno proizvedenih i kvalitetnih poljoprivrednih proizvoda. </p>
 					<p class="leading-normal">Korišćenjem gradske pijace ostvaruju se bolji uslovi kupoprodaje - direktan kontakt kupca i prodavca, izbor mjesta isporuke, načina plaćanja i povoljnije cijene, ostvarujući na taj način optimalan odnos između cijene i kvaliteta.</p>
 					<p class="leading-normal mb-0">Preko “Gradske pijace” ostavuje se uvid u trenutni asortiman poljoprivrednih proizvoda u okruzenju, a onda se i kroz nekoliko klikova oni i naruce. Pri čemu kroz direktan kontakt kupca i proizvođača oni imaju mogućnost upravljanja vlastitim vremenom.</p>
@@ -118,72 +118,72 @@
 				</div>
 				<div class="row ">
 					<div class="col-md-6 col-lg-4 features">
-						<div class="card">
+						<div class="card h90">
 							<div class="card-body text-center">
 								<div class="feature">
 									<div class="fa-stack fa-lg  fea-icon bg-success mb-3">
 										<i class="fa fa-bullhorn  text-white"></i>
 									</div>
 									<h3>Provide Free Ads</h3>
-									<p>our being able to do what we like best, every pleasure is to be welcomed and every pain.</p>
+									<p>svježi i kvalitetni poljoprivredni proizvodi</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 features">
-						<div class="card">
+						<div class="card h90">
 							<div class="card-body text-center">
 								<div class="feature">
 									<div class="fa-stack fa-lg  fea-icon bg-primary mb-3">
 										<i class="fa fa-heart  text-white"></i>
 									</div>
 									<h3>Best Ad Ratings</h3>
-									<p>our being able to do what we like best, every pleasure is to be welcomed and every pain.</p>
+									<p>sezonsko voće i povrće koje će imati bolji ukus, kvalitet i hranljivu vrijednost od industrijski masovno proizvedenih plasiranih proizvoda u veleprodaji</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 features">
-						<div class="card">
+						<div class="card h90">
 							<div class="card-body text-center">
 								<div class="feature">
 									<div class="fa-stack fa-lg  fea-icon bg-secondary mb-3">
 										<i class="fa fa-bookmark  text-white"></i>
 									</div>
 									<h3>Provide Post Features</h3>
-									<p>our being able to do what we like best, every pleasure is to be welcomed and every pain.</p>
+									<p>povoljni uslovi razmjene – kupci i prodavci se dogovaraju o izboru načina dostave i plaćanja.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 features">
-						<div class="card mb-lg-0">
+						<div class="card h90 mb-lg-0">
 							<div class="card-body text-center">
 								<div class="feature">
 									<div class="fa-stack fa-lg  fea-icon bg-warning mb-3">
 										<i class="fa fa-line-chart   text-white"></i>
 									</div>
 									<h3>See  your Ad Progress</h3>
-									<p>our being able to do what we like best, every pleasure is to be welcomed and every pain.</p>
+									<p>upoznavanje proizvodjaca kroz direktan kontakt i uvid u način proizvodnje, što dodatno stvara veći nivo međusobnog povjerenja.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 features">
-						<div class="card mb-lg-0 mb-md-0">
+						<div class="card h90 mb-lg-0 mb-md-0">
 							<div class="card-body text-center">
 								<div class="feature">
 									<div class="fa-stack fa-lg  fea-icon bg-danger mb-3">
 										<i class="fa fa-handshake-o   text-white"></i>
 									</div>
 									<h3>User Friendly</h3>
-									<p>our being able to do what we like best, every pleasure is to be welcomed and every pain.</p>
+									<p>-kupovina lokalno proizvedenih autetičnih proizvoda</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 features">
-						<div class="card mb-0">
+						<div class="card h90 mb-0">
 							<div class="card-body text-center">
 								<div class="feature">
 									<div class="fa-stack fa-lg  fea-icon bg-info mb-3">
@@ -199,7 +199,18 @@
 			</div>
 		</section>
 		<!--/section-->
-
+	<!--section-->
+	<section class="sptb bg-white">
+		<div class="container">
+			<div class="text-justify">
+				<h2 class="mb-4">Koristi za prodavce</h2>
+				<p class="leading-normal">Preko sajta “Gradska pijaca” proizvođači će moći da predstave i prodaju vlastite domaće poljoprivredne proizvode na jednostavan način. Tako će se postavljaju na mapu trzišta i postaju konkurentniji.  </p>
+				<p class="leading-normal">Omogućava im da približe i opisu način rada i njihovih proizvoda, predstavljanje proizvoda na njima svojstven način i pravljenje imidža i prepoznatljivosti njihovog proizvoda, kao i planiranje i upravljanje prodajom i proizvodnjom. </p>
+				<p class="leading-normal">Gradska pijaca” namijenjena je porvobitno poljoprivrednim proizvodjacima, prodavcima poljoprivrednih proizvoda i kupcima tj potrošača domaćih poljopriverdnih proizvoda</p>
+			</div>
+		</div>
+	</section>
+	<!--/section-->
 		@include('components.newsletter')
 
 		

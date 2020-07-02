@@ -14,10 +14,10 @@
 								<h6>Naše usluge</h6>
 								 <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
 								<ul class="list-unstyled mb-0">
-									<li><a href="javascript:;">Kontakt</a></li>
-									<li><a href="javascript:;">O nama</a></li>
-									<li><a href="javascript:;">Blog</a></li>
-									<li><a href="javascript:;">Terms and Services</a></li>
+									<li><a href="/contact">Kontakt</a></li>
+									<li><a href="/about">O nama</a></li>
+									<li><a href="#">Blog</a></li>
+									<li><a href="#">Terms and Services</a></li>
 								</ul>
 							</div>
 
@@ -33,9 +33,7 @@
 									<li>
 										<a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 069 964 834</a>
 									</li>
-									 <li>
-										<a href="#"><i class="fa fa-print mr-3 text-primary"></i> + 069 964 834</a>
-									</li>
+									
 								</ul>
 								<ul class="list-unstyled list-inline mt-3">
 									<li class="list-inline-item">
