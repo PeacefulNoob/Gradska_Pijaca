@@ -24,7 +24,11 @@
 		<section class="sptb">
 			<div class="container">
 				<div class="row ">
+					@include('logUser.side_meni')
+
 					<div class="col-lg-8 col-md-12 col-md-12">
+						<form action="{{ route('post.store')}}"  method="POST" enctype="multipart/form-data"  id="commentForm"  class="form-horizontal mb-0">
+							@csrf
 						<div class="card ">
 							<div class="card-header ">
 								<h3 class="card-title">Blog Objava</h3>
@@ -32,62 +36,40 @@
 							<div class="card-body">
 								<div class="form-group">
 									<label class="form-label text-dark">Naziv Blog Objave</label>
-									<input type="text" class="form-control" placeholder="">
+									<input type="text" name="title" class="form-control" placeholder="">
 								</div>
 								<div class="form-group">
 									<label class="form-label text-dark">Kategorija</label>
 									<select class="form-control custom-select">
 										<option value="0">Izaberite</option>
-										<option value="1">RealEstate</option>
-										<option value="2">Restaurant</option>
-										<option value="3">Health & Fitness</option>
-										<option value="4">Travel</option>
-										<option value="5">Computer</option>
-										<option value="6">Electronics</option>
-										<option value="7">Jobs</option>
-										<option value="8">Beauty & Spa</option>
-										<option value="9">Clothing</option>
-										<option value="10">Home & Furinture</option>
-										<option value="11">Vechicles</option>
-										<option value="12">Education</option>
-										<option value="13">Services</option>
-										<option value="14">Events</option>
+										@foreach ($categories as $category)
+										<option value="{{$category->id}}">{{$category->title}}</option>
+
+										@endforeach
 									</select>
 								</div>
 							
 						
 								<div class="form-group">
 									<label class="form-label text-dark">Opis</label>
-									<textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Unesite opis ovde.."></textarea>
+									<textarea class="form-control" name="body" rows="6" placeholder="Unesite opis ovde.."></textarea>
 								</div>
 								<div class="form-group">
 									<div class="custom-file">
-										<input type="file" class="custom-file-input" name="example-file-input-custom">
+										<input type="file" class="custom-file-input" name="cover_image">
 										<label class="custom-file-label">Izaberite sliku</label>
 									</div>
 								</div>
 							
-								<div class="p-2 border mb-4">
-									<div class="upload-images d-flex">
-										<div>
-											<img src="../../assets/images/products/h5.jpg" alt="img" class="w73 h73 border p-0">
-										</div>
-										<div class="ml-3 mt-2">
-											<h6 class="mb-0 mt-3 font-weight-bold">h5.jpg</h6>
-											<small>4.5kb</small>
-										</div>
-										<div class="float-right ml-auto">
-											<a href="#" class="float-right btn btn-icon btn-danger btn-sm mt-5" ><i class="fa fa-trash-o "></i></a>
-										</div>
-									</div>
-								</div>
+							
 							
 							
 							</div>
 							<div class="card-footer ">
-								<a href="#" class="btn btn-success">Submit Now</a>
+								<button type="submit" class="btn btn-primary btn-xs" id="uploadB">DODAJ</button>
 							</div>
 						</div>
+					</form>
 					</div>
 				
 

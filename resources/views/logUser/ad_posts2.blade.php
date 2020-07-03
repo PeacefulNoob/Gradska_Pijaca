@@ -24,39 +24,8 @@
 		<section class="sptb">
 			<div class="container">
 				<div class="row">
-					<div class="col-xl-3 col-lg-12 col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<h3 class="card-title">Korisnički panel</h3>
-							</div>
-							<div class="card-body text-center item-user border-bottom">
-								<div class="profile-pic">
-									<div class="profile-pic-img">
-										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
-										<img src="../../assets/images/faces/male/25.jpg" class="brround" alt="user">
-									</div>
-									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h4></a>
-								</div>
-							</div>
-							<div class="item1-links  mb-0">
-								<a href="/user" class="active d-flex border-bottom">
-									<span class="icon1 mr-3"><i class="icon icon-user"></i></span> Uredi profil
-								</a>
-							<a href="/user/{{ Auth::user()->id}}" class=" d-flex  border-bottom">
-									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Moji Oglasi
-								</a>
-								<a href="/ad/create" class=" d-flex  border-bottom">
-									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Dodaj oglas
-								</a>
-							
-								<a href="#" class="d-flex">
-									<span class="icon1 mr-3"><i class="icon icon-power"></i></span> Logout
-								</a>
-							</div>
-						</div>
-					
-						
-					</div>
+					@include('logUser.side_meni')
+
 					<div class="col-xl-8">
 						<div class="card mb-xl-0">
 							<div class="card-header">
@@ -64,7 +33,7 @@
 							</div>
 							<div class="card-body">
 								<form action="{{ route('ad.store')}}"  method="POST" enctype="multipart/form-data"  id="commentForm"  class="form-horizontal mb-0">
-									@csrf>
+									@csrf
 									<div id="rootwizard" class="border pt-0">
 										<ul class="nav nav-tabs nav-justified">
 											<li class="nav-item"><a href="#first" data-toggle="tab" class="nav-link font-bold">Osnovno</a></li>
@@ -101,7 +70,31 @@
 											</div>
 											<div class="tab-pane fade" id="second">
 											
-											
+												<div class="col-12 form-group p-5">
+													<label for="tag" name="tag" class="control-label"></label>
+												<button type="button" class="btn btn-primary btn-xs" id="selectbtn-tag">
+														Select all
+													</button>
+													<button type="button" class="btn btn-primary btn-xs" id="deselectbtn-tag">
+														Deselect all
+													</button>
+{{-- 													{!! Form::select('tag[]', $tags, old('tag'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'id' => 'selectall-tag' ]) !!}
+ --}}
+													<select name="tag[]" id="tag" class="form-control select2" id="selectall-tag" multiple >
+														@foreach ($tags as $tag)
+														<option value="{{$tag->id}}">{{$tag->name}}</option>
+
+														@endforeach
+														
+													  </select>
+													  <br><br>
+													<p class="help-block"></p>
+													@if($errors->has('tag'))
+														<p class="help-block">
+															{{ $errors->first('tag') }}
+														</p>
+													@endif
+												</div>
 												<div class="control-group form-group">
 													<label class="form-label text-dark">Opis</label>
 													<textarea class="form-control required" name="about" rows="6" placeholder="Unesite opis oglasa.."></textarea>
@@ -115,7 +108,7 @@
 										
 											</div>
 									
-											<button type="submit" id="uploadB">DODAJ</button>
+											<button type="submit" class="btn btn-primary btn-xs" id="uploadB">DODAJ</button>
 										
 										</div>
 									</div>
@@ -169,4 +162,20 @@
 			</div>
 		</section>
 		<!--/Add posts-section-->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>
+    $("#selectbtn-tag").click(function(){
+        $("#selectall-tag > option").prop("selected","selected");
+        $("#selectall-tag").trigger("change");
+    });
+    $("#deselectbtn-tag").click(function(){
+        $("#selectall-tag > option").prop("selected","");
+        $("#selectall-tag").trigger("change");
+    });
+
+    $(document).ready(function () {
+        $('.select2').select2();
+    });
+</script>
 		@endsection

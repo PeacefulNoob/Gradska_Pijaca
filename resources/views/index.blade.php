@@ -142,7 +142,7 @@
 							<div class="power-ribbon power-ribbon-top-left text-warning"></div>
 							<div class="item-card2-img">
 								<a href=" ad/{{$ad->id}}  "></a>
-								<img src="/assets//images/products/products/f1.jpg" alt="img" class="cover-image">
+								<img src="/assets/images/ad_images/{{$ad->image}}" alt="img" class="cover-image">
 							</div>
 							<div class="item-card2-icons">
 								
@@ -152,10 +152,10 @@
 								<div class="item-card2">
 									<div class="item-card2-desc">
 										<div class="item-card2-text">
-										<a href="#" class="text-dark"><h4 class="mb-0"> {{$ad->title}} </h4></a>
+										<a href="ad/{{$ad->id}} " class="text-dark"><h4 class="mb-0"> {{$ad->title}} </h4></a>
 										</div>
 										<div class="d-flex">
-											<a href="">
+											<a href="#">
 												<p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i> {{$ad->location}} </p>
 											</a>
 										</div>

@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Ad;
 use App\Categories;
+use App\User;
+use App\Tag;
+use DB;
+
+
+
 use Illuminate\Http\Request;
 
 class AdController extends Controller
@@ -31,8 +37,8 @@ class AdController extends Controller
     public function create()
     {
         $categories = Categories::all();
-
-        return view('logUser.ad_posts2', compact("categories"));
+        $tags=Tag::all();
+        return view('logUser.ad_posts2', compact("categories","tags"));
 
 
     }
@@ -62,7 +68,7 @@ class AdController extends Controller
             // Filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             // Upload Image
-           $path = $request->file('image')->move(public_path('images/ad_images'), $fileNameToStore);
+           $path = $request->file('image')->move(public_path('assets/images/ad_images/'), $fileNameToStore);
 
                 } else {
             $fileNameToStore = 'noimage.jpg';
@@ -76,11 +82,14 @@ class AdController extends Controller
         $ad->location = $request->input('location');
         $ad->user_id = auth()->user()->id;
         $ad->image = $fileNameToStore;
-       
         $ad->save();
-/*         $post->tag()->sync((array)$request->input('tag'));
- */        
-        return redirect('/')->with('success', 'Post Created');
+
+
+/*         dd((array)$request->input('tag'));
+ */        $ad->tags()->sync((array)$request->input('tag'));
+
+      
+        return redirect('/')->with('success', 'Ad Created');
 
     }
 
@@ -92,9 +101,12 @@ class AdController extends Controller
      */
     public function show($id)
     {
+ 
         $ad = Ad::findOrFail($id);
-
-        return view('ad_info')->with('ad', $ad);
+        $ad->increment('views');
+        $ads = DB::table('ads')->where('id', '=', $ad->cat_id)->get();
+        $user = User::find($ad->user_id);
+        return view('ad_info',compact('ad','ads','user'));
     }
 
     /**
@@ -131,6 +143,7 @@ class AdController extends Controller
     {
         //
     }
+ 
 
-    
+
 }

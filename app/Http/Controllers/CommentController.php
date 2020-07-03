@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Categories;
-use App\Ad;
-
+use App\Comment;
 use Illuminate\Http\Request;
+use App\Post;
 
-class CategoriesController extends Controller
+
+
+class CommentController extends Controller
 {
-    public function __construct() {
-        $this->middleware('admin')->except(['show', 'index']);
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -29,7 +31,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -38,33 +40,39 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Post $post)
     {
-        //
+        
+        $this->validate(request(), [
+            'name' => 'required|min:3',
+            'body' => 'required|min:3' ,
+            'email' => 'required'
+        ]);
+
+        $post-> addComment(request('body' , 'name' , 'email'));
+
+        return back();
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment)
     {
-        $category = Categories::findOrFail($id);
-        $ads = Ad::where('cat_id',$id)->get();
-        $categories = Categories::all();
-        return view('all_ads', compact('ads','categories','category')); 
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categories $categories)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -73,10 +81,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Categories  $categories
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categories $categories)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -84,10 +92,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categories $categories)
+    public function destroy(Comment $comment)
     {
         //
     }

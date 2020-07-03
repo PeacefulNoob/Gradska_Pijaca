@@ -20,5 +20,20 @@ class Ad extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'post_tag');
+    }
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
 
+    public function likes()
+    {
+    
+        DB::table('ads')->where('id', $ad->id)->increment('likes');
+    }
+
+    
 }

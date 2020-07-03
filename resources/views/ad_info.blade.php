@@ -160,11 +160,13 @@
 						</div>
 						<!--/Classified Description-->
 
-						<h3 class="mb-5 mt-4">Related Posts</h3>
+						<h3 class="mb-5 mt-4">Proizvodi </h3>
 
 						<!--Related Posts-->
 						<div id="myCarousel5" class="owl-carousel owl-carousel-icons3">
 							<!-- Wrapper for carousel items -->
+@foreach ($ads as $ady)
+	
 
 							<div class="item">
 								<div class="card">
@@ -173,26 +175,26 @@
 										<img src="../../assets/images/products/products/ed1.jpg" alt="img" class="cover-image">
 									</div>
 									<div class="item-card7-overlaytext">
-										<a href="blog_details" class="text-white"> Education</a>
+										<a href="blog_details" class="text-white"> {{$ad->cat_id}}</a>
 									</div>
 									<div class="card-body">
 										<div class="item-card7-desc">
-											<a href="blog_details" class="text-dark"><h4 class="font-weight-semibold">Record Writing</h4></a>
+										<a href="blog_details" class="text-dark"><h4 class="font-weight-semibold">{{$ady->title}}</h4></a>
 										</div>
 										<div class="item-card7-text">
 											<ul class="icon-card mb-0">
-												<li ><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-												<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-												<li class="mb-0"><a href="#" class="icons"><i class="icon icon-user text-muted mr-1"></i> Sally Peake</a></li>
-												<li class="mb-0"><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 5-67987608</a></li>
+												<li ><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i>  {{$ady->location}}</a></li>
+												<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i>  {{$ady->created_at}}</a></li>
+												<li class="mb-0"><a href="#" class="icons"><i class="icon icon-user text-muted mr-1"></i>{{$user->name}}</a></li>
+												<li class="mb-0"><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> {{$user->phoneNo}}</a></li>
 											</ul>
-											<p class="mb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem....</p>
+											<p class="mb-0">{{$ady->description}}</p>
 										</div>
 									</div>
 								</div>
 							</div>
 							
-						
+							@endforeach
 						
 						</div>
 						<!--/Related Posts-->
@@ -203,45 +205,42 @@
 					<div class="col-xl-4 col-lg-4 col-md-12">
 						<div class="card">
 							<div class="card-header">
-								<h3 class="card-title">Posted By</h3>
+								<h3 class="card-title">Oglas objavio  </h3>
 							</div>
+								
+						
 							<div class="card-body  item-user">
 								<div class="profile-pic mb-0">
 									<img src="../../assets/images/faces/male/25.jpg" class="brround avatar-xxl" alt="user">
 									<div >
-										<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">Robert McLean</h4></a>
-										<span class="text-muted">Member Since November 2008</span>
-										<h6 class="mt-2 mb-0"><a href="#" class="btn btn-primary btn-sm">See All Ads</a></h6>
-									</div>
+									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">{{$user->name}} {{$user->last_name}}</h4></a>
+										<span class="text-muted">Učlanio se  {{$user->created_at}}</span>
+{{-- 										<h6 class="mt-2 mb-0"><a href="#" class="btn btn-primary btn-sm">See All Ads</a></h6>
+ --}}									</div>
 
 								</div>
 							</div>
 							<div class="card-body item-user">
-								<h4 class="mb-4">Contact Info</h4>
+								<h4 class="mb-4">Kontakt informacije</h4>
 								<div>
-									<h6><span class="font-weight-semibold"><i class="fa fa-envelope mr-3 mb-2"></i></span><a href="#" class="text-body"> robert123@gmail.com</a></h6>
-									<h6><span class="font-weight-semibold"><i class="fa fa-phone mr-3  mb-2"></i></span><a href="#" class="text-primary"> 0-235-657-24587</a></h6>
-									<h6><span class="font-weight-semibold"><i class="fa fa-link mr-3 "></i></span><a href="#" class="text-primary">http://spruko.com/</a></h6>
+									<h6><span class="font-weight-semibold"><i class="fa fa-envelope mr-3 mb-2"></i></span><a href="#" class="text-body"> {{$user->email}}</a></h6>
+									<h6><span class="font-weight-semibold"><i class="fa fa-phone mr-3  mb-2"></i></span><a href="#" class="text-primary"> {{$user->phoneNo}}</a></h6>
 								</div>
-								<div class=" item-user-icons mt-4">
-									<a href="#" class="facebook-bg mt-0"><i class="fa fa-facebook"></i></a>
-									<a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-									<a href="#" class="google-bg"><i class="fa fa-google"></i></a>
-									<a href="#" class="dribbble-bg"><i class="fa fa-dribbble"></i></a>
-								</div>
+								
 							</div>
 						
 						</div>
+
 						<div class="card">
 							<div class="card-header">
-								<h3 class="card-title">Keywords</h3>
+								<h3 class="card-title">Tagovi</h3>
 							</div>
 							<div class="card-body product-filter-desc">
 								<div class="product-tags clearfix">
 									<ul class="list-unstyled mb-0">
-										<li><a href="#">Vehicle</a></li>
-										<li><a href="#">Model Cars</a></li>
-										<li><a href="#">Best Car</a></li>
+										@foreach ($ad->tags as $tag)
+										<li><a href="#">{{$tag->name}}</a></li>
+										@endforeach
 									</ul>
 								</div>
 							</div>

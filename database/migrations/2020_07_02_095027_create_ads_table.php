@@ -20,8 +20,8 @@ class CreateAdsTable extends Migration
             $table->integer('user_id');
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->integer('views')->nullable();
-            $table->integer('likes')->nullable();
+            $table->integer('views')->default('1')->nullable();
+            $table->integer('likes')->default('1')->nullable();
             $table->string('location')->nullable();
             $table->timestamps();
         });

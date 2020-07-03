@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('site','SiteController');  
 Route::resource('categories','CategoriesController');  
+Route::resource('categories_post','CategoriesPostController');  
+
 Route::resource('admin','HomeController'); 
 Route::resource('ad','AdController');  
 Route::resource('user','UsersController');  
+Route::resource('post','PostController');  
+
 
 Route::get('/about', function () {
     return view('about');
@@ -29,14 +33,8 @@ Route::get('/contact', function () {
 });
    
 
-Route::get('/blog_details', function () {
-    return view('blog_details');
-});
-Route::get('/blog_grid', function () {
-    return view('blog_grid');
+Route::post('/posts/{post}/comments' , 'CommentController@store');
 
-
-});
 
 
 Auth::routes();
@@ -51,8 +49,6 @@ Route::group(
 Route::group(
     ['prefix' => 'user', 'middleware' => ['auth', 'approved']],
     function () {
-        Route::get('/ad_blog', function () {
-            return view('logUser.ad_blog');
-        });
+       
     }
 );

@@ -24,39 +24,8 @@
 		<section class="sptb">
 			<div class="container">
 				<div class="row">
-					<div class="col-xl-3 col-lg-12 col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<h3 class="card-title">Korisnički panel</h3>
-							</div>
-							<div class="card-body text-center item-user border-bottom">
-								<div class="profile-pic">
-									<div class="profile-pic-img">
-										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
-										<img src="../../assets/images/faces/male/25.jpg" class="brround" alt="user">
-									</div>
-									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h4></a>
-								</div>
-							</div>
-							<div class="item1-links  mb-0">
-								<a href="/user" class="active d-flex border-bottom">
-									<span class="icon1 mr-3"><i class="icon icon-user"></i></span> Uredi profil
-								</a>
-								<a href="/user/{{ Auth::user()->id}}" class=" d-flex  border-bottom">
-									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Moji Oglasi
-								</a>
-								<a href="/ad/create" class=" d-flex  border-bottom">
-									<span class="icon1 mr-3"><i class="icon icon-diamond"></i></span> Dodaj oglas
-								</a>
-								<a href="#" class="d-flex">
-									<span class="icon1 mr-3"><i class="icon icon-power"></i></span> Logout
-								</a>
-							</div>
-						</div>
-					
-						
-					</div>
-				
+					@include('logUser.side_meni')
+
 					<div class="col-xl-9 col-lg-12 col-md-12">
 						<form action="{{ route('user.update',  Auth::user()->id) }}"  method="POST" enctype="multipart/form-data">
 							@method('PUT')
@@ -104,7 +73,7 @@
 											<input type="number" name="zip"  class="form-control" value="{{ Auth::user()->zip }}">
 										</div>
 									</div>
-									
+								
 						{{-- 			<div class="col-sm-6 col-md-6">
 										<div class="form-group">
 											<label class="form-label">Facebook</label>

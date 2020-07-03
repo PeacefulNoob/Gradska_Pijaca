@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Categories;
-use App\Ad;
-
+use App\Image;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller
+class ImageController extends Controller
 {
-    public function __construct() {
-        $this->middleware('admin')->except(['show', 'index']);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +24,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -46,25 +41,21 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Image $image)
     {
-        $category = Categories::findOrFail($id);
-        $ads = Ad::where('cat_id',$id)->get();
-        $categories = Categories::all();
-        return view('all_ads', compact('ads','categories','category')); 
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categories $categories)
+    public function edit(Image $image)
     {
         //
     }
@@ -73,10 +64,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Categories  $categories
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categories $categories)
+    public function update(Request $request, Image $image)
     {
         //
     }
@@ -84,10 +75,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categories $categories)
+    public function destroy(Image $image)
     {
         //
     }

@@ -14,7 +14,7 @@
 							</li>
 							<li aria-haspopup="true"><a href="/about">O nama </a></li>
 					 
-							<li aria-haspopup="true"><a href="/blog_grid">Blog </a>
+							<li aria-haspopup="true"><a href="/post">Blog </a>
 								
 							
 							</li> 

@@ -5,9 +5,9 @@
 		<meta charset="UTF-8">
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="Claylist - Classifieds, Directory, Multipurpose Listing HTML Template">
-		<meta name="author" content="Spruko Technologies Private Limited">
-		<meta name="keywords" content="directory listing html template, bootstrap html template, directory html template, directory website template, directory listing html template, directory listing template, listing website template, business directory template, membership directory template, directory template, service directory template, bootstrap business directory template, directory listing website template, business directory html template, online directory template, online directory website templates, best website templates, html template, html5 template, themeforest html, themeforest html templates">
+		<meta name="description" content="Gradska Pijaca">
+		<meta name="author" content="Gradska Pijaca">
+		<meta name="keywords" content="Gradska Pijaca">
 		
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -19,7 +19,7 @@
 
  
 		<!-- Title -->
-		<title>Claylist - Classifieds, Directory, Multipurpose Listing HTML Template</title>
+		<title>Gradska Pijaca</title>
 		<link rel="stylesheet" href="../../assets/fonts/fonts/font-awesome.min.css">
 
 		<!-- Sidemenu Css -->
