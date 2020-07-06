@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Post;
 
 
-
 class CommentController extends Controller
 {
     public function __construct()
@@ -48,6 +47,7 @@ class CommentController extends Controller
             'body' => 'required|min:3' ,
             'email' => 'required'
         ]);
+
 
         $post-> addComment(request('body' , 'name' , 'email'));
 

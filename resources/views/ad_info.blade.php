@@ -17,17 +17,13 @@
 										<div class="form-group col-xl-4 col-lg-4 select2-lg  col-md-12 mb-0">
 											<select class="form-control select2-show-search border-bottom-0 w-100" data-placeholder="Select">
 												<optgroup label="Categories">
-													<option>Select</option>
-													<option value="1">Vehicle</option>
-													<option value="2">Real Estate</option>
-													<option value="3">Computer</option>
-													<option value="4">Clothing</option>
-													<option value="5">Job</option>
-													<option value="6">Services</option>
-													<option value="7">Electronics</option>
-													<option value="8">Mobile</option>
-													<option value="9">Events</option>
-													<option value="10">Constructions</option>
+												
+													<option>Izaberi</option>
+													@foreach ($categories as $category)
+													<option value="{{$category->id}}">{{$category->title}}</option>
+											
+													
+												@endforeach
 												</optgroup>
 											</select>
 										</div>
@@ -48,10 +44,10 @@
 		<div class="bg-white border-bottom">
 			<div class="container">
 				<div class="page-header">
-					<h4 class="page-title">Oglas</h4>
+					<h4 class="page-title">{{ $ad->title }}</h4>
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">Početna</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Oglas</li>
+						<li class="breadcrumb-item active" aria-current="page">{{ $ad->title }}</li>
 					</ol>
 				</div>
 			</div>
@@ -239,7 +235,7 @@
 								<div class="product-tags clearfix">
 									<ul class="list-unstyled mb-0">
 										@foreach ($ad->tags as $tag)
-										<li><a href="#">{{$tag->name}}</a></li>
+										<li><a href="/tag/{{$tag->id}}">{{$tag->name}}</a></li>
 										@endforeach
 									</ul>
 								</div>

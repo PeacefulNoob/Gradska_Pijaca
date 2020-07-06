@@ -61,10 +61,10 @@
     @include('layouts.header_top')
     @include('layouts.mobile_header')
     @include('layouts.header_bot')
-
-{{--     @include('layouts.messages')
- --}}  
-   @yield('content')
+	<main >
+		@include('components.message')
+		@yield('content')
+	</main>
    @include('layouts.footer')
 
 		<!-- Back to top -->

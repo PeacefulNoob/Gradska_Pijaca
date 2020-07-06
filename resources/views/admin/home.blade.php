@@ -10,7 +10,7 @@
 					<div class="app-sidebar__user clearfix">
 						<div class="dropdown user-pro-body">
 							<div>
-								<img src="../../assets/images/faces/ {{ Auth::user()->image }}" alt="user-img" class="avatar avatar-lg brround">
+								<img src="/assets/images/user_images/{{ Auth::user()->image }}" alt="user-img" class="avatar avatar-lg brround">
 									<span class="fa fa-pencil" aria-hidden="true"></span>
 								</a>
 							</div>
@@ -22,16 +22,16 @@
 					</div>
 					<ul class="side-menu">
 						<li class="slide">
-							<a class="side-menu__item" href="/admin/"><i class="side-menu__icon fa fa-tachometer"></i><span class="side-menu__label">Dashboard</span></a>
+							<a class="side-menu__item" href="/admin/"><i class="side-menu__icon fa fa-tachometer"></i><span class="side-menu__label">Početna Admin</span></a>
 							
 						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-cogs"></i><span class="side-menu__label">Admin settings</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li><a class="slide-item" href="/admin/1">Ads List</a></li>
-								<li><a class="slide-item" href="/admin/users_all">All Users</a></li>
-							</ul>
-						</li>
+						
+						<li>
+							<a class="side-menu__item" href="/admin/1"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Lista Oglasa</span></a></li>
+							<li>
+								<a class="side-menu__item" href="/admin/users_all"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Lista Korisnika</span></a></li>
+				
+					
 					
                     </ul>
 				</aside>

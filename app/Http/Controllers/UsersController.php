@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Storage;
 use DB;
+use Validator;
 
 
 class UsersController extends Controller
@@ -63,7 +64,13 @@ class UsersController extends Controller
         return view('logUser.myads', ['ads' => $user->ad]);
 
     }
+    public function showUserBlogs($id)
+    {
+         $user = User::with('posts')->find($id);
+         return view('logUser.myblogs', ['posts' => $user->posts]);
+        
 
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -87,14 +94,19 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'last_name' => 'required',
             'image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg'
 
-
         ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
 
         if ($request->hasFile('image')) {
             //image
@@ -107,7 +119,7 @@ class UsersController extends Controller
             //create new filename
             $filenameToStore = $filename . '_' . time() . '.' . $extension;
             //Upload image
-            $path = $request->file('image')->move(public_path('images'), $filenameToStore);
+            Image::make($request->file('image'))->resize(300, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/user_images/'.$filenameToStore);
         } else {
             $filenameToStore = "none";
         }

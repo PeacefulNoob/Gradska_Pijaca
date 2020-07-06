@@ -5,6 +5,7 @@
    
 @include('layouts.header_top')
         <main class="py-4">
+            @include('components.message')
             @yield('content')
         </main>
     </div>

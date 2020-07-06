@@ -18,10 +18,8 @@
 								
 							
 							</li> 
-							<li aria-haspopup="true"><a href="/all_ads">Kategorije <span class="fa fa-caret-down m-0"></span></a>
-								<ul class="sub-menu">
-									<li aria-haspopup="true"><a href="blog_details">Classifieds Left</a></li>
-								</ul>
+							<li aria-haspopup="true"><a href="/ad">Oglasi </a>
+							
 
 							</li>
 						

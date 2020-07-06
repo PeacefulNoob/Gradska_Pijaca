@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ad;
+use App\Post;
+
 use App\Categories;
 
 class SiteController extends Controller
@@ -17,7 +19,8 @@ class SiteController extends Controller
     {
         $ads = Ad::all();
         $categories = Categories::all();
-        return view('index', compact("ads", "categories"));
+        $posts = Post::all();
+        return view('index', compact("ads", "categories","posts"));
 
     }
 

@@ -20,6 +20,8 @@ Route::resource('admin','HomeController');
 Route::resource('ad','AdController');  
 Route::resource('user','UsersController');  
 Route::resource('post','PostController');  
+Route::resource('tag','TagController');  
+
 
 
 Route::get('/about', function () {
@@ -49,6 +51,8 @@ Route::group(
 Route::group(
     ['prefix' => 'user', 'middleware' => ['auth', 'approved']],
     function () {
-       
+        
+        Route::get('/showUserBlogs/{id}', 'UsersController@showUserBlogs');
+
     }
 );

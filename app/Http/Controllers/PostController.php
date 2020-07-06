@@ -6,7 +6,11 @@ use App\Post;
 use App\Categories_post;
 
 use App\User;
-use App\Tag;
+use Validator;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+
+
 
 use Illuminate\Http\Request;
 
@@ -24,10 +28,10 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        $tags = Tag::all();
+   
         $users = User::all();
         $categories = Categories_post::all();
-        return view('posts.blog_grid' , compact("posts", "tags","users","categories"));
+        return view('posts.blog_grid' , compact("posts","users","categories"));
     
     }
 
@@ -38,9 +42,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        $tags = \App\Tag::get()->pluck('name', 'id');
+
         $categories = Categories_post::all();
-        return view('logUser.ad_blog', compact('tags','categories'));
+        return view('logUser.ad_blog', compact('categories'));
         
     }
 
@@ -52,12 +56,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-       
-        $this->validate($request, [
-            'title' => 'required',
-            'body' => 'required',
-            'cover_image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg|max:1999'
-        ]);
+               
+      $validator = Validator::make($request->all(), [
+        'title' => 'required',
+        'body' => 'required',
+        'cover_image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg|max:1999'
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+    }
+    
 
         // Handle File Upload
         if ($request->hasFile('cover_image')) {
@@ -70,7 +81,8 @@ class PostController extends Controller
             // Filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             // Upload Image
-            $path = $request->file('cover_image')->move(public_path('/assets/images/post_images'), $fileNameToStore);
+            Image::make($request->file('cover_image'))->resize(500, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/post_images/'.$fileNameToStore);
+
                 } else {
             $fileNameToStore = 'noimage.jpg';
         }
@@ -79,12 +91,12 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->cat_id = $request->input('cat_id');
         $post->user_id = auth()->user()->id;
         $post->cover_image = $fileNameToStore;
     
         $post->save();
-/*         $post->tag()->sync((array)$request->input('tag'));
- */        return redirect('/post')->with('success', 'Post Created');
+      return redirect('/post')->with('success', 'Post Created');
     }
     /**
      * Display the specified resource.
@@ -108,9 +120,22 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        $categories = Categories_post::all();
+
+        //Check if post exists before 
+        if (!isset($post)) {
+            return redirect('/')->with('error', 'No Post Found');
+        }
+
+        // Check for correct user
+        if (auth()->user()->id !== $post->user_id) {
+            return redirect('/')->with('error', 'Unauthorized Page');
+        }
+
+        return view('logUser.edit_post',compact('post','categories'));
     }
 
     /**
@@ -122,7 +147,50 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+               
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'body' => 'required',
+            'cover_image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg'
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        
+
+        
+        // Handle File Upload
+        if ($request->hasFile('cover_image')) {
+            // Get filename with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+            // Upload Image
+            Image::make($request->file('cover_image'))->resize(500, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/post_images/'.$fileNameToStore);
+            // Delete file if exists
+            Storage::delete('images/post_images' . $post->cover_image);
+
+        }else{
+            $fileNameToStore = $post->cover_image;
+        }
+
+        // Update Post
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->cat_id = $request->input('cat_id');
+        if ($request->hasFile('cover_image')) {
+            $post->cover_image = $fileNameToStore;
+        }
+        $post->save();
+
+        return redirect()->back()->with('success', 'Ažuriranje uspješno');
     }
 
     /**
@@ -131,7 +199,7 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
         $post = Post::find($id);
 

@@ -8,7 +8,7 @@ class Categories_post extends Model
 {
     protected $fillable = array('title');
     
-    public function posts()
+    public function post()
     {
         return $this->hasMany('App\Post');
     }

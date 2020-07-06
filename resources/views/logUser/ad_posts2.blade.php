@@ -97,7 +97,7 @@
 												</div>
 												<div class="control-group form-group">
 													<label class="form-label text-dark">Opis</label>
-													<textarea class="form-control required" name="about" rows="6" placeholder="Unesite opis oglasa.."></textarea>
+													<textarea class="form-control required" name="description" rows="6" placeholder="Unesite opis oglasa.."></textarea>
 												</div>
 												<div class="control-group form-group">
 													<div class="custom-file">

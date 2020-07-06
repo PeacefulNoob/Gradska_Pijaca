@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec5a949637b609378cb8bcb10daff06a",
+    "content-hash": "5ad70552bdb106e0880237465ac0200a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -702,17 +702,71 @@
             "time": "2019-07-01T23:21:34+00:00"
         },
         {
-            "name": "intervention/image",
-            "version": "dev-master",
+            "name": "hootlex/laravel-moderation",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Intervention/image.git",
-                "reference": "a59085a161dc63db97cbe81fd576025c8e699570"
+                "url": "https://github.com/hootlex/laravel-moderation.git",
+                "reference": "1ae3aa8ae2ee3d16ecb8325c99d15614901d4d7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/a59085a161dc63db97cbe81fd576025c8e699570",
-                "reference": "a59085a161dc63db97cbe81fd576025c8e699570",
+                "url": "https://api.github.com/repos/hootlex/laravel-moderation/zipball/1ae3aa8ae2ee3d16ecb8325c99d15614901d4d7b",
+                "reference": "1ae3aa8ae2ee3d16ecb8325c99d15614901d4d7b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "laravel/laravel": "5.*",
+                "nunomaduro/collision": "^2.0",
+                "phpunit/phpunit": "7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hootlex\\Moderation\\ModerationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hootlex\\Moderation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Kyriakidis",
+                    "email": "hootlex@icloud.com"
+                }
+            ],
+            "description": "A simple Content Moderation System for Laravel 5.* that allows you to Approve or Reject resources like posts, comments, users, etc.",
+            "keywords": [
+                "content-moderation",
+                "laravel",
+                "moderation",
+                "moderation-system"
+            ],
+            "time": "2018-06-08T08:18:26+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
                 "shasum": ""
             },
             "require": {
@@ -769,7 +823,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2019-11-02T09:24:56+00:00"
+            "time": "2019-11-02T09:15:47+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5913,9 +5967,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "intervention/image": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

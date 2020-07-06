@@ -25,19 +25,22 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $users = User::all();
 
-        return view('admin.home');
+        return view('admin.users_all')->with('users',$users);
     }
     public function allUsers()
         {
             $users = User::all();
-            return view('admin.users-all')->with('users',$users);
+
+            return view('admin.users_all')->with('users',$users);
         }
 
 
         public function show($id)
         {
             $ads = Ad::all();
+     
             return view('admin.ads', compact('ads')); 
 
         }

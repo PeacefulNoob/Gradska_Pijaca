@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
-use Illuminate\Http\Request;
+use App\Categories;
 
+use Illuminate\Http\Request;
+use Validator;
 class TagController extends Controller
 {
     /**
@@ -28,7 +30,7 @@ class TagController extends Controller
         $tags = DB::table('tags')->orderBy('id', 'desc')->get();
 
 
-        return view('tags.post_tag' , compact("posts", "tags"));
+        return view('tags.ad_tag' , compact("posts", "tags"));
     }
 
     /**
@@ -39,16 +41,24 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+ 
+        $validator = Validator::make($request->all(), [
             'post_id' => 'required',
             'tag_id' => 'required'
         ]);
-
+    
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        
+    
       
         // Create Post
-        $post_tag = new Post;
-        $post_tag->tag_id = $request->input('tag_id');
-        $post_tag->post_id = $request->input('post_id');
+        $ad_tag = new Post;
+        $ad_tag->tag_id = $request->input('tag_id');
+        $ad_tag->post_id = $request->input('post_id');
    
         $post->save();
 
@@ -61,11 +71,15 @@ class TagController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show($id)
     {
         $tags = Tag::findOrFail($id);
 
-        return view('tags.show' , compact("tags", "tags"));
+      
+        $categories = Categories::all();
+
+        return view('tag_ad', compact('tags','categories'));
+        
     }
 
     /**

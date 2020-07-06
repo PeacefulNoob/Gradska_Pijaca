@@ -10,7 +10,7 @@ class Image extends Model
     protected $fillable = array('ad_id', 'title');
 
 
-    public function ads()
+    public function ad()
     {
         return $this->belongsTo('App\Ad');
     }

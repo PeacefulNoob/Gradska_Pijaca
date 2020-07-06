@@ -31,10 +31,6 @@ class Post extends Model
 
           ]);
      }
-     public function tag()
-     {
-         return $this->belongsToMany(Tag::class, 'post_tag');
-     }
 
      public function categories_post()
      {

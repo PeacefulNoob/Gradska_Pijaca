@@ -47,8 +47,8 @@
 				<div class="page-header">
 					<h4 class="page-title"></h4>
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active" aria-current="page">{{$category->title}}</li>
+						<li class="breadcrumb-item"><a href="#">Početna</a></li>
+						<li class="breadcrumb-item active" aria-current="page">{{$tags->name}}</li>
 					</ol>
 				</div>
 			</div>
@@ -60,8 +60,7 @@
 			<div class="container">
 				<div class="row">
 					<!--Left Side Content-->
-					@include('components.side_categories')
-
+		@include('components.side_categories')
 					<!--/Left Side Content-->
 
 					<div class="col-xl-9 col-lg-8 col-md-12">
@@ -74,8 +73,8 @@
 									
 										<div class="tab-pane active" id="tab-12">
 											<div class="row">
-												@foreach ($ads as $ad)
-													
+
+                                                @foreach($tags->ads as $ad)													
 											
 												<div class="col-lg-6 col-md-12 col-xl-4">
 													<div class="card overflow-hidden">
@@ -90,7 +89,7 @@
 														</div>
 														<div class="card-body">
 															<div class="item-card9">
-																<a href="/ad/{{$ad->id}}">{{$category->title}}</a>
+                                                            <a href="/ad/{{$ad->id}}">{{$ad->categories->title}}</a>
 																<a href="/ad/{{$ad->id}}" class="text-dark mt-2"><h4 class="font-weight-semibold mt-1">{{$ad->title}} </h4></a>
 																<p>{{$ad->description}}</p>
 																<div class="item-card9-desc">

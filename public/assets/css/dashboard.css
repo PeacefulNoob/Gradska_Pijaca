@@ -12234,7 +12234,7 @@ a.icon:hover {
     color: #000;
     margin: 0 -0.30rem;
     border-bottom: 0;
-    
+
 }
 
 .nav-tabs .nav-link {
@@ -13286,13 +13286,27 @@ hr.divider:after {
     position: relative;
     margin-bottom: 1.5rem;
     width: 100%;
-    
- 
+
+
 }
-.h90{
+
+.maxh50 {
+    max-height: 30vh;
+}
+
+.message-error {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 20%;
+    z-index: 100;
+}
+
+.h90 {
     height: 90%;
 
 }
+
 .card .card {
     box-shadow: 0 10px 40px 0 rgba(62, 57, 107, .1), 0 2px 9px 0 rgba(62, 57, 107, .1);
 }

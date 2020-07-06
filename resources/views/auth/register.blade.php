@@ -11,10 +11,10 @@
             <div class="header-text mb-0">
                 <div class="container">
                     <div class="text-center text-white">
-                        <h1 class="">Register</h1>
+                        <h1 class="">Registracija</h1>
                         <ol class="breadcrumb text-center">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active text-white" aria-current="page">Register</li>
+                            <li class="breadcrumb-item"><a href="#">Početna</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Registracija</li>
                         </ol>
                     </div>
                 </div>
@@ -32,9 +32,9 @@
                         <div class="wrapper wrapper2">
                        <form method="POST" action="{{ route('register') }}" id="Register" class="card-body" tabindex="500">
                                 @csrf
-                                <h3>Register</h3>
+                                <h3>Registracija</h3>
                                 <div class="name">
-                                    <label>Name</label>
+                                    <label>Ime</label>
 
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
         
@@ -45,7 +45,7 @@
                                         @enderror
                                 </div>
                                 <div class="name">
-                                    <label>Last name</label>
+                                    <label>Prezime</label>
 
                                         <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
         
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="mail">
                                    
-                                    <label>Mail or Username</label>
+                                    <label>Email adresa</label>
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
         
                                         @error('email')
@@ -68,7 +68,7 @@
 
                                 </div>
                                 <div class="passwd">
-                                    <label>Password</label>
+                                    <label>Pasvord</label>
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                     @error('password')
@@ -79,14 +79,14 @@
 
                                 </div>
                                 <div class="passwd">
-                                    <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                                    <label for="password-confirm">{{ __('Potvrdite pasvord') }}</label>
                                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
         
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                                <p class="text-dark mb-0">Already have an account?<a href="/login" class="text-primary ml-1">Sign In</a></p>
+                                <p class="text-dark mb-0">Imate postojeći nalog?<a href="/login" class="text-primary ml-1">Sign In</a></p>
                             </form>
                          
                         </div>

@@ -12,17 +12,17 @@ class Ad extends Model
 
     public function categories()
     {
-        return $this->belongsTo('App\Categories');
+        return $this->belongsTo('App\Categories', 'cat_id');
     }
 
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'post_tag');
+        return $this->belongsToMany(Tag::class, 'ad_tag');
     }
     public function images()
     {

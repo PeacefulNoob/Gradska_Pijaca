@@ -101,7 +101,7 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label class="form-label">O meni</label>
-											<textarea rows="5" name="about"  class="form-control" value="{{ Auth::user()->about }}"></textarea>
+											<textarea rows="5" name="about"  class="form-control" >{{ Auth::user()->about }}</textarea>
 										</div>
 									</div>
 									<div class="col-md-12">

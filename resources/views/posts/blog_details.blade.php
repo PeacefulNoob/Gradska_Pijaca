@@ -7,7 +7,7 @@
         <div class="header-text mb-0">
             <div class="container">
                 <div class="text-center text-white">
-                    <h1 class="">Blog-Details</h1>
+                    <h1 class="">{{ $post->title }}</h1>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Blog</a></li>
@@ -60,7 +60,7 @@
                                 <div class="media mt-0 p-5">
                                     <div class="d-flex mr-3">
                                         <a href="#"><img class="media-object brround" alt="64x64"
-                                                src="../../assets/images/faces/male/1.jpg"> </a>
+                                                src="/assets/images/user_images/{{ $comment->user->image }}"> </a>
                                     </div>
                                     <div class="media-body">
                                         <h5 class="mt-0 mb-1 font-weight-semibold"> {{ $comment->name }}
