@@ -34,20 +34,22 @@
                             <div class="item7-card-img">
                                 <a href="/post/{{$post->id}}"></a>
                                 <img src="/assets/images/post_images/{{$post->cover_image}}" alt="img" class="cover-image">
-                              
+                                <div class="item7-card-text">
+                                    <span class="badge badge-info">{{ $post->categories_post->title }}</span>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="item7-card-desc d-flex mb-2">
-                                    <a href="#"><i class="fa fa-calendar-o text-muted mr-2"></i>{{ $post->created_at}}</a>
+                                   <i class="fa fa-calendar-o text-muted mr-2"></i>{{ $post->created_at}}
                                     <div class="ml-auto">
-                                        <a href="#"><i class="fa fa-comment-o text-muted mr-2"></i>4 Comments</a>
+										<i class="fa fa-comment-o text-muted mr-2"></i>{{$post->comments->count()}} Komentara
                                     </div>
                                 </div>
                                 <a href="#" class="text-dark">
                                     <h4 class="font-weight-semibold">{{ $post->title}}</h4>
                                 </a>
                                 <p>{{ $post->body}} </p>
-                                <a href="/post/{{$post->id}}" class="btn btn-primary btn-sm">Read More</a>
+                                <a href="/post/{{$post->id}}" class="btn btn-primary btn-sm">Opširnije</a>
                             </div>
                         </div>
                     </div>
@@ -63,12 +65,14 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="input-group">
-                            <input type="text" class="form-control br-tl-3  br-bl-3" placeholder="Pretraga">
-                            <div class="input-group-append ">
-                                <button type="button" class="btn btn-primary br-tr-3  br-br-3">
-                                    Pretraga
-                                </button>
-                            </div>
+                            <div class="form-group  col-xl-12 col-lg-12 col-md-12 select2-lg mb-0 bg-white ">
+                                <select class="form-control select2-show-search  border-bottom-0" data-placeholder="Izaberi Oglas"  id="selectbox"  onchange="javascript:location.href = this.value;">
+                                    <option value="#">Izaberi Oglas</option>
+                                    @foreach ($posts as $post)
+                                    <option value="/post/{{$post->id}}">{{$post->title}}</option>
+                                    @endforeach
+                            </select>
+                            </div>       
                         </div>
                     </div>
                 </div>
@@ -105,7 +109,11 @@
     </div>
 </section>
 <!--Add listing-->
-
+<script type="text/javascript">
+    window.onload = function(){
+        location.href=document.getElementById("selectbox").value;
+    }       
+</script>
 @include('components.newsletter')
 
 @endsection

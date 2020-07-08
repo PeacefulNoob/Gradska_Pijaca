@@ -608,6 +608,9 @@ mark {
     background-size: cover !important;
     width: 100%;
     position: relative;
+    height: 250px;
+
+    object-fit: cover;
 }
 
 .img-thumbnail {
@@ -18936,6 +18939,8 @@ svg {
 
     .item-card2-img img {
         width: 100%;
+        height: 186px;
+        object-fit: cover;
     }
 
     .item-card9-img img {

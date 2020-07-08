@@ -9,29 +9,8 @@
 						<div class="row">
 							<div class="col-xl-8 col-lg-12 col-md-12 d-block mx-auto">
 								
-								<div class=" search-background">
-									<div class="form row no-gutters">
-										<div class="form-group  col-xl-6 col-lg-5 col-md-12 mb-0">
-											<input type="text" class="form-control input-lg border-right-0" id="text" placeholder="Search Products">
-										</div>
-										<div class="form-group col-xl-4 col-lg-4 select2-lg  col-md-12 mb-0">
-											<select class="form-control select2-show-search border-bottom-0 w-100" data-placeholder="Select">
-												<optgroup label="Categories">
-												
-													<option>Izaberi</option>
-													@foreach ($categories as $category)
-													<option value="{{$category->id}}">{{$category->title}}</option>
-											
-													
-												@endforeach
-												</optgroup>
-											</select>
-										</div>
-										<div class="col-xl-2 col-lg-3 col-md-12 mb-0">
-											<a href="#" class="btn btn-lg btn-block btn-primary br-bl-0 br-tl-0">Pretraga</a>
-										</div>
-									</div>
-								</div>
+															@include('components.search')
+
 							</div>
 						</div>
 					</div>
@@ -46,7 +25,9 @@
 				<div class="page-header">
 					<h4 class="page-title">{{ $ad->title }}</h4>
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Početna</a></li>
+						<li class="breadcrumb-item"><a href="/">Početna</a></li>
+						<li class="breadcrumb-item"><a href="/ad">Svi Oglasi</a></li>
+
 						<li class="breadcrumb-item active" aria-current="page">{{ $ad->title }}</li>
 					</ol>
 				</div>
@@ -84,16 +65,13 @@
 								<div class="product-slider">
 									<div id="carousel" class="carousel slide" data-ride="carousel">
 										<div class="carousel-inner">
-											<div class="carousel-item active"> <img src="../../assets/images/products/products/v1.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v2.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v3.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v4.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v1.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v1.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v2.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v3.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v4.jpg" alt="img"> </div>
-											<div class="carousel-item"> <img src="../../assets/images/products/products/v1.jpg" alt="img"> </div>
+										<div class="carousel-item active"> <img src="/assets/images/ad_images/{{$ad->image}}" alt="img"> </div>
+
+											@foreach ($images as $image)
+											<div class="carousel-item "> <img src="/assets/images/ad_images/{{$image->title}}" alt="img"> </div>
+
+													@endforeach
+									
 										</div>
 										<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
 											<i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -106,27 +84,15 @@
 										<div id="thumbcarousel" class="carousel slide" data-interval="false">
 											<div class="carousel-inner">
 												<div class="carousel-item active">
-													<div data-target="#carousel" data-slide-to="0" class="thumb"><img src="../../assets/images/products/v1.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="1" class="thumb"><img src="../../assets/images/products/v2.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="2" class="thumb"><img src="../../assets/images/products/v3.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="3" class="thumb"><img src="../../assets/images/products/v4.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="4" class="thumb"><img src="../../assets/images/products/v1.png" alt="img"></div>
+													@foreach ($images as $image)
+													<div data-target="#carousel" data-slide-to="0" class="thumb"><img src="/assets/images/ad_images/{{$image->title}}" alt="img"></div>
+
+													@endforeach
 
 												</div>
-												<div class="carousel-item ">
-													<div data-target="#carousel" data-slide-to="0" class="thumb"><img src="../../assets/images/products/v1.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="1" class="thumb"><img src="../../assets/images/products/v2.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="2" class="thumb"><img src="../../assets/images/products/v3.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="3" class="thumb"><img src="../../assets/images/products/v4.png" alt="img"></div>
-													<div data-target="#carousel" data-slide-to="4" class="thumb"><img src="../../assets/images/products/v1.png" alt="img"></div>
-												</div>
+											
 											</div>
-											<a class="carousel-control-prev" href="#thumbcarousel" role="button" data-slide="prev">
-												<i class="fa fa-angle-left" aria-hidden="true"></i>
-											</a>
-											<a class="carousel-control-next" href="#thumbcarousel" role="button" data-slide="next">
-												<i class="fa fa-angle-right" aria-hidden="true"></i>
-											</a>
+										
 										</div>
 									</div>
 								</div>
@@ -161,30 +127,33 @@
 						<!--Related Posts-->
 						<div id="myCarousel5" class="owl-carousel owl-carousel-icons3">
 							<!-- Wrapper for carousel items -->
-@foreach ($ads as $ady)
+@foreach ($cat_ads as $ads)
 	
 
 							<div class="item">
 								<div class="card">
 									<div class="item-card7-imgs">
 										<a href="blog_details"></a>
-										<img src="../../assets/images/products/products/ed1.jpg" alt="img" class="cover-image">
+										<img src="/assets/images/ad_images/{{$ads->image}}" alt="img" class="cover-image">
 									</div>
 									<div class="item-card7-overlaytext">
-										<a href="blog_details" class="text-white"> {{$ad->cat_id}}</a>
+										<a href="blog_details" class="text-white"> </a>
 									</div>
 									<div class="card-body">
 										<div class="item-card7-desc">
-										<a href="blog_details" class="text-dark"><h4 class="font-weight-semibold">{{$ady->title}}</h4></a>
+										<a href="blog_details" class="text-dark"><h4 class="font-weight-semibold">{{$ads->title}}</h4></a>
 										</div>
 										<div class="item-card7-text">
 											<ul class="icon-card mb-0">
-												<li ><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i>  {{$ady->location}}</a></li>
-												<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i>  {{$ady->created_at}}</a></li>
+												<li ><a href="/showLocation/{{$ad->location}}" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i>  {{$ads->location}}</a></li>
+												<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i>  {{$ads->created_at}}</a></li>
 												<li class="mb-0"><a href="#" class="icons"><i class="icon icon-user text-muted mr-1"></i>{{$user->name}}</a></li>
 												<li class="mb-0"><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> {{$user->phoneNo}}</a></li>
 											</ul>
-											<p class="mb-0">{{$ady->description}}</p>
+											<p class="mb-0">@php
+												
+												echo substr($ads->description, 0, 20);
+											@endphp </p>
 										</div>
 									</div>
 								</div>
@@ -211,8 +180,7 @@
 									<div >
 									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">{{$user->name}} {{$user->last_name}}</h4></a>
 										<span class="text-muted">Učlanio se  {{$user->created_at}}</span>
-{{-- 										<h6 class="mt-2 mb-0"><a href="#" class="btn btn-primary btn-sm">See All Ads</a></h6>
- --}}									</div>
+								</div>
 
 								</div>
 							</div>

@@ -34,8 +34,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
    
+Route::get('/showLocation/{location}', 'CategoriesController@showLocation');
 
 Route::post('/posts/{post}/comments' , 'CommentController@store');
+Route::get('/like/{id}' , 'AdController@like');
 
 
 

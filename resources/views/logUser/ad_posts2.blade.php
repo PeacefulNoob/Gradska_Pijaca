@@ -36,12 +36,12 @@
 									@csrf
 									<div id="rootwizard" class="border pt-0">
 										<ul class="nav nav-tabs nav-justified">
-											<li class="nav-item"><a href="#first" data-toggle="tab" class="nav-link font-bold">Osnovno</a></li>
+											<li class="nav-item"><a href="#first" data-toggle="tab" class="nav-link font-bold active">Osnovno</a></li>
 											<li class="nav-item"><a href="#second" data-toggle="tab" class="nav-link font-bold">Detaljnije</a></li>
 										
 										</ul>
 										<div class="tab-content card-body mt-3 mb-0 b-0">
-											<div class="tab-pane fade" id="first">
+											<div class="tab-pane fade active show" id="first">
 												<div class="control-group form-group">
 													<div class="form-group">
 														<label class="form-label text-dark">Naziv oglasa</label>
@@ -71,7 +71,7 @@
 											<div class="tab-pane fade" id="second">
 											
 												<div class="col-12 form-group p-5">
-													<label for="tag" name="tag" class="control-label"></label>
+													<label for="tag" name="tag" class="control-label">Izaberite tag</label>
 												<button type="button" class="btn btn-primary btn-xs" id="selectbtn-tag">
 														Select all
 													</button>
@@ -80,6 +80,7 @@
 													</button>
 {{-- 													{!! Form::select('tag[]', $tags, old('tag'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'id' => 'selectall-tag' ]) !!}
  --}}
+
 													<select name="tag[]" id="tag" class="form-control select2" id="selectall-tag" multiple >
 														@foreach ($tags as $tag)
 														<option value="{{$tag->id}}">{{$tag->name}}</option>
@@ -100,12 +101,17 @@
 													<textarea class="form-control required" name="description" rows="6" placeholder="Unesite opis oglasa.."></textarea>
 												</div>
 												<div class="control-group form-group">
-													<div class="custom-file">
-														<input type="file" class="custom-file-input required" name="image">
-														<label class="custom-file-label">Unesite slike</label>
-													</div>
+												
+														<input type="file" id="file-1"  class="file required" name="image[]" multiple>
+{{-- 														<label class="custom-file-label">Unesite slike</label>
+ --}}												
 												</div>
-										
+												<div class="control-group form-group">
+												<label for="file-2">Unesite početnu sliku</label>
+													<input type="file" id="file-2"  class="file required" name="cover_image" >
+{{-- 													
+--}}												
+											</div>
 											</div>
 									
 											<button type="submit" class="btn btn-primary btn-xs" id="uploadB">DODAJ</button>
@@ -162,9 +168,14 @@
 			</div>
 		</section>
 		<!--/Add posts-section-->
+		<script src="/assets/js/vendors/jquery-3.2.1.min.js"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
+
+
+
+/* 	////////////////////////// */
     $("#selectbtn-tag").click(function(){
         $("#selectall-tag > option").prop("selected","selected");
         $("#selectall-tag").trigger("change");
@@ -177,5 +188,26 @@
     $(document).ready(function () {
         $('.select2').select2();
     });
+</script>
+
+<script type="text/javascript">
+	
+$("#file-1").fileinput({
+theme:'fa',
+uploadUrl:"/image-submit",
+uploadExtraData:function(){
+	return{
+		_token:$("input[name= '_token']").val()
+	};
+},
+allowedFileExtensions:['jpg','png','svg'],
+overwriteInitial:false,
+maxFileSize:2000,
+maxFileNum:6,
+slugCallback:function(filename){
+return filename.replace('(','_').replace(']','_');
+}
+
+});
 </script>
 		@endsection

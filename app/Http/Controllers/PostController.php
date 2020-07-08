@@ -31,7 +31,7 @@ class PostController extends Controller
    
         $users = User::all();
         $categories = Categories_post::all();
-        return view('posts.blog_grid' , compact("posts","users","categories"));
+        return view('posts.blog_grid' , compact("posts","users","categories","posts"));
     
     }
 
@@ -60,7 +60,7 @@ class PostController extends Controller
       $validator = Validator::make($request->all(), [
         'title' => 'required',
         'body' => 'required',
-        'cover_image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg|max:1999'
+        'cover_image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg'
     ]);
 
     if ($validator->fails()) {
@@ -108,8 +108,9 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($post->id);
         $categories = Categories_post::all();
+        $posts = Post::all();
 
-    return view('posts.blog_details', compact('post','categories'));
+    return view('posts.blog_details', compact('post','categories','posts'));
         
 
     }

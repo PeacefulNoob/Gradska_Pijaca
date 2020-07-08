@@ -10,7 +10,7 @@
 						<div class="text-center text-white">
 							<h1 class="">Login</h1>
 							<ol class="breadcrumb text-center">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item"><a href="/">Početna</a></li>
 								<li class="breadcrumb-item active text-white" aria-current="page">Login</li>
 							</ol>
 						</div>

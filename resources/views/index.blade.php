@@ -23,68 +23,8 @@
 											<li class=""><a href="#index1" class="active" data-toggle="tab">Oglasi</a></li>
 										</ul>
 									</div>
-									<div class="tab-content index-search-select">
-										<div class="tab-pane active" id="index1">
-											<div class=" search-background">
-												<div class="form row no-gutters">
-													<div class="form-group col-xl-6 col-lg-5 col-md-12 mb-0">
-														<select class="form-control border-bottom-0 w-100" id="job" data-placeholder="Select">
-															<optgroup label="Categories">
-																<option>Select</option>
-																<option value="1">Private</option>
-																<option value="2">Software</option>
-																<option value="3">Banking</option>
-																<option value="4">Finaces</option>
-																<option value="5">Corporate</option>
-																<option value="6">Driver</option>
-																<option value="7">Sales</option>
-															</optgroup>
-														</select>
-													</div>
-													<div class="form-group col-xl-6 col-lg-7  col-md-12 mb-0 location">
-														<div class="row no-gutters bg-white br-2">
-															<div class="form-group  col-xl-8 col-lg-7 col-md-12 mb-0">
-																<input type="text" class="form-control border" id="job-text" placeholder="Naziv oglasa">
-															</div>
-															<div class="col-xl-4 col-lg-5 col-md-12 mb-0">
-																<a href="#" class="btn btn-block btn-primary fs-14"><i class="fa fa-search"></i> Potraži</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tab-pane" id="index2">
-											<div class=" search-background">
-												<div class="form row no-gutters">
-													<div class="form-group col-xl-6 col-lg-5 col-md-12 mb-0">
-														<select class="form-control border-bottom-0"  id="employe" data-placeholder="Select">
-															<optgroup label="Categories">
-																<option>Select</option>
-																<option value="1">Private</option>
-																<option value="2">Software</option>
-																<option value="3">Banking</option>
-																<option value="4">Finaces</option>
-																<option value="5">Corporate</option>
-																<option value="6">Driver</option>
-																<option value="7">Sales</option>
-															</optgroup>
-														</select>
-													</div>
-													<div class="form-group col-xl-6 col-lg-7  col-md-12 mb-0 location">
-														<div class="row no-gutters bg-white br-2">
-															<div class="form-group  col-xl-8 col-lg-7 col-md-12 mb-0">
-																<input type="text" class="form-control border" id="employe-text" placeholder="Location">
-															</div>
-															<div class="col-xl-4 col-lg-5 col-md-12 mb-0">
-																<a href="#" class="btn btn-block btn-primary fs-14"><i class="fa fa-search"></i> Pretraga</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+									@include('components.search')
+
 								</div>
 							</div>
 						</div>
@@ -147,7 +87,7 @@
 							</div>
 							<div class="item-card2-icons">
 								
-								<a href="#" class="item-card2-icons-r bg-secondary"><i class="fa fa fa-heart-o"></i></a>
+								<a href="/like/{{$ad->id}}" class="item-card2-icons-r bg-secondary"><i class="fa fa fa-heart-o"></i></a>
 							</div>
 							<div class="card-body pb-0">
 								<div class="item-card2">
@@ -156,11 +96,14 @@
 										<a href="ad/{{$ad->id}} " class="text-dark"><h4 class="mb-0"> {{$ad->title}} </h4></a>
 										</div>
 										<div class="d-flex">
-											<a href="#">
+											<a href="/showLocation/{{$ad->location}}">
 												<p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i> {{$ad->location}} </p>
 											</a>
 										</div>
-										<p class="" > {{$ad->description}}  </p>
+										<p class="">@php
+												
+											echo substr($ad->description, 0, 30);
+										@endphp </p>
 									</div>
 								</div>
 							</div>
@@ -271,7 +214,7 @@
 								<div class="item7-card-desc d-flex mb-2">
 									<i class="fa fa-calendar-o text-muted mr-2"></i>{{$post->created_at}}
 									<div class="ml-auto">
-										<i class="fa fa-comment-o text-muted mr-2"></i>4 Comments
+										<i class="fa fa-comment-o text-muted mr-2"></i>{{$post->comments->count()}} Komentara
 									</div>
 								</div>
 								<a href="/post/{{$post->id}}" class="text-dark"><h4 class="fs-20">{{$post->title}}</h4></a>

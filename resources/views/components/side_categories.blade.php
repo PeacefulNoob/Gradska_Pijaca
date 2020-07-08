@@ -12,7 +12,10 @@
                     
                     <label class="custom-control custom-checkbox mb-3">
                         <span class="">
-                            <a href="/categories/{{$categ->id}}" class="text-dark">{{$categ->title}}<span class="label label-secondary float-right">14</span></a>
+                            <a href="/categories/{{$categ->id}}" class="text-dark">{{$categ->title}}<span class="label label-secondary float-right">
+                              
+                  
+                            </span></a>
                         </span>
                     </label>
                 @endforeach

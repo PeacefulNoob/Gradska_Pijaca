@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use App\Ad;
+use DB;
 
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
     public function __construct() {
-        $this->middleware('admin')->except(['show', 'index']);
+        $this->middleware('admin')->except(['show', 'index','showLocation']);
     }
     /**
      * Display a listing of the resource.
@@ -54,10 +55,25 @@ class CategoriesController extends Controller
         $category = Categories::findOrFail($id);
         $ads = Ad::where('cat_id',$id)->get();
         $categories = Categories::all();
-        return view('all_ads', compact('ads','categories','category')); 
+        $ad_location= Ad::select('location')->distinct()->get();
+        $all_ads = Ad::all();
+
+
+        return view('all_ads', compact('ads','categories','all_ads','ad_location','category')); 
 
     }
+    public function showLocation($location)
+    {
+        $ads = Ad::where('location',$location)->get();
+        $categories = Categories::all();
+        $ad_location= Ad::select('location')->distinct()->get();
+        $all_ads = Ad::all();
 
+
+        return view('all', compact('ads','categories','all_ads','ad_location'));
+
+
+    }
     /**
      * Show the form for editing the specified resource.
      *

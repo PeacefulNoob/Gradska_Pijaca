@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Ad;
+use DB;
 
 class HomeController extends Controller
 {
@@ -44,6 +45,15 @@ class HomeController extends Controller
             return view('admin.ads', compact('ads')); 
 
         }
-
-
+        public function update(Request $request,$id)
+        {
+            DB::table('users')->where('id', $id)->update([
+                'approved' => $request->approved,
+              
+            ]);
+            
+    
+    
+            return redirect()->back()->with('success', 'Ažuriranje uspješno');
+        }
 }

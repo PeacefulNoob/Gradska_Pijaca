@@ -63,6 +63,7 @@
 																<th>Grad</th>
 																<th>Poštanski broj</th>
 																<th>Odobren</th>
+																<th>Promeni</th>
 																<th>Datum </th>
 
 															</tr>
@@ -73,7 +74,7 @@
 																<td>{{$user->id}}</td>
 																<td>
 																	<div class="d-flex">
-																		<span class="avatar avatar-md  d-block brround cover-image mr-3" data-image-src="../../assets/images/faces/{{$user->image}}"></span>
+																		<span class="avatar avatar-md  d-block brround cover-image mr-3" data-image-src="/assets/images/user_images/{{$user->image}}"></span>
 																		<span class="mt-2">{{$user->name}} {{$user->last_name}}</span>
 																	</div>
 																</td>
@@ -81,6 +82,20 @@
 																<td>{{$user->city}}</td>
 																<td>{{$user->zip}}</td>
 																<td>{{$user->approved}}</td>
+																<td>
+																	<form action="/admin/{{{$user->id}}} " method="POST" enctype="multipart/form-data">
+																		@method('PATCH')
+																		@csrf
+																		<select name="approved" id="approved" onchange="this.form.submit()">
+																			<option value="">Izaberi</option>
+																			<option value="0">Odbijen</option>
+																			<option value="1">Odobren</option>
+																
+																			</select>
+																		</form>
+																	</td>
+
+														
 																<td>{{$user->created_at}}</td>
 
 															</tr>

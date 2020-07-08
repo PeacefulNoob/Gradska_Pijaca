@@ -9,8 +9,8 @@
                 <div class="text-center text-white">
                     <h1 class="">{{ $post->title }}</h1>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                        <li class="breadcrumb-item"><a href="/">Početna</a></li>
+                        <li class="breadcrumb-item"><a href="/post">Blog</a></li>
                         <li class="breadcrumb-item active text-white" aria-current="page">{{ $post->title }}</li>
                     </ol>
                 </div>
@@ -30,11 +30,11 @@
                         <div class="item7-card-img">
                             <img src="/assets/images/post_images/{{ $post->cover_image }}" alt="img" class="w-100">
                             <div class="item7-card-text">
-                                <span class="badge badge-info">Jobs</span>
+                                <span class="badge badge-info">{{ $post->categories_post->title }}</span>
                             </div>
                         </div>
                         <div class="item7-card-desc d-flex mb-2 mt-3">
-                            <a href="#"><i class="fa fa-calendar-o text-muted mr-2"></i>Nov-28-2018</a>
+                            <a href="#"><i class="fa fa-calendar-o text-muted mr-2"></i>{{ $post->user->created_at }}</a>
                             <a href="#"><i class="fa fa-user text-muted mr-2"></i> {{ $post->user->name }}</a>
                             <div class="ml-auto">
                                 <a href="#"><i class="fa fa-comment-o text-muted mr-2"></i>2 Comments</a>
@@ -109,7 +109,7 @@
                                         <textarea class="form-control" name="body" rows="6" placeholder="Vaš komentar"
                                             required></textarea>
                                     </div>
-                                <button class="btn btn-primary btn-md commB ">Submit</button>
+                                <button class="btn btn-primary btn-md commB ">Pošalji</button>
                             </div>
                         </form>
                 </div>
@@ -119,12 +119,14 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="input-group">
-                                <input type="text" class="form-control br-tl-3  br-bl-3" placeholder="Pretraga">
-                                <div class="input-group-append ">
-                                    <button type="button" class="btn btn-primary br-tr-3  br-br-3">
-                                        Pretraga
-                                    </button>
-                                </div>
+                                <div class="form-group  col-xl-12 col-lg-12 col-md-12 select2-lg mb-0 bg-white ">
+                                    <select class="form-control select2-show-search  border-bottom-0" data-placeholder="Izaberi Oglas"  id="selectbox"  onchange="javascript:location.href = this.value;">
+                                        <option value="#">Izaberi Oglas</option>
+                                        @foreach ($posts as $post)
+                                        <option value="/post/{{$post->id}}">{{$post->title}}</option>
+                                        @endforeach
+                                </select>
+                                </div>                            
                             </div>
                         </div>
                     </div>

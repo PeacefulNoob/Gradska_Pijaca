@@ -12,7 +12,7 @@ class Ad extends Model
 
     public function categories()
     {
-        return $this->belongsTo('App\Categories', 'cat_id');
+        return $this->belongsTo('App\Categories','cat_id');
     }
 
 
@@ -29,11 +29,6 @@ class Ad extends Model
         return $this->hasMany('App\Image');
     }
 
-    public function likes()
-    {
-    
-        DB::table('ads')->where('id', $ad->id)->increment('likes');
-    }
 
     
 }

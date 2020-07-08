@@ -20,7 +20,11 @@ class SiteController extends Controller
         $ads = Ad::all();
         $categories = Categories::all();
         $posts = Post::all();
-        return view('index', compact("ads", "categories","posts"));
+        $ad_location= Ad::select('location')->distinct()->get();
+        $all_ads = Ad::all();
+
+        
+        return view('index', compact("ads", "categories","posts","all_ads","ad_location"));
 
     }
 

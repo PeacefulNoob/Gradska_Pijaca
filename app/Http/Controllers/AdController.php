@@ -6,6 +6,8 @@ use App\Ad;
 use App\Categories;
 use App\User;
 use App\Tag;
+use Illuminate\Support\Facades\Auth;
+
 use DB;
 use Validator;
 use Intervention\Image\Facades\Image;
@@ -32,8 +34,10 @@ class AdController extends Controller
     {
         $ads = Ad::all();
         $categories = Categories::all();
+        $all_ads = Ad::all();
+        $ad_location= Ad::select('location')->distinct()->get();
 
-        return view('all', compact('ads','categories'));
+        return view('all', compact('ads','categories','all_ads','ad_location'));
     }
 
     /**
@@ -65,7 +69,8 @@ class AdController extends Controller
             'location' => 'required',
             'cat_id' => 'required',
             'description' => 'required',
-            'image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg|required'
+            'cover_image' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg'
+
         ]);
 
         if ($validator->fails()) {
@@ -74,18 +79,21 @@ class AdController extends Controller
                         ->withInput();
         }
 
-        // Handle File Upload
-        if ($request->hasFile('image')) {
+
+  
+
+       // Handle File Upload
+        if ($request->hasFile('cover_image')) {
             // Get filename with the extension
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             // Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             // Get just ext
-            $extension = $request->file('image')->getClientOriginalExtension();
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
             // Filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             // Upload Image
-         Image::make($request->file('image'))->resize(500, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/ad_images/'.$fileNameToStore);
+             Image::make($request->file('cover_image'))->resize(500, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/ad_images/'.$fileNameToStore);
                 } else {
             $fileNameToStore = 'noimage.jpg';
         }
@@ -97,16 +105,33 @@ class AdController extends Controller
         $ad->cat_id = $request->input('cat_id');
         $ad->description = $request->input('description');
         $ad->location = $request->input('location');
-        $ad->user_id = auth()->user()->id;
         $ad->image = $fileNameToStore;
+        $ad->user_id = auth()->user()->id;
+
         $ad->save();
 
 
-/*         dd((array)$request->input('tag'));
- */        $ad->tags()->sync((array)$request->input('tag'));
+       $ad->tags()->sync((array)$request->input('tag'));
 
-      
-        return redirect('/')->with('success', 'Ad Created');
+
+            if ($request->hasFile('image')) 
+            {  
+                foreach($request->file('image') as $image)
+                {
+                    $name=$image->getClientOriginalName();
+                    Image::make($image)->resize(500, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/ad_images/'.$name);
+                    $data[] = $name;  
+                    $image1 = new Image;
+                    $image1->title=json_encode($data);     
+                    DB::table('images')
+                        ->insert(
+                            ['title' => $name,
+                            'ad_id' => $ad->id]
+                        );
+                }
+               
+                }
+        return redirect()->back()->with('success', 'Ažuriranje uspješno');
 
     }
 
@@ -119,11 +144,15 @@ class AdController extends Controller
     public function show($id)
     {
         $categories = Categories::all();
+    
         $ad = Ad::findOrFail($id);
         $ad->increment('views');
-        $ads = DB::table('ads')->where('id', '=', $ad->cat_id)->get();
+        $cat_ads = DB::table('ads')->where('cat_id', '=', $ad->cat_id)->get();
         $user = User::find($ad->user_id);
-        return view('ad_info',compact('ad','ads','user','categories'));
+        $images = DB::table('images')->where('ad_id', '=', $id)->get();
+        $all_ads = Ad::all();
+        $ad_location= Ad::select('location')->distinct()->get();
+        return view('ad_info',compact('ad','cat_ads','user','categories','images','all_ads','ad_location'));
     }
 
     /**
@@ -220,5 +249,18 @@ class AdController extends Controller
         $ad->delete();
         return redirect()->back()->with('success', 'Brisanje uspješno');
     }
+
+    public function like($id)
+    {
+        $likePost = DB::table('likes')->insert([
+                'user_id' => Auth::user()->id,
+                'ad_id' => $id
+        ]);
+        return redirect()->back()->with('success', 'Ažuriranje uspješno');
+
+       
     }
+    }
+ 
+
  
