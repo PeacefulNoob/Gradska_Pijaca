@@ -120,20 +120,29 @@ class UsersController extends Controller
             $filenameToStore = $filename . '_' . time() . '.' . $extension;
             //Upload image
             Image::make($request->file('image'))->resize(300, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/user_images/'.$filenameToStore);
+            DB::table('users')->where('id', $id)->update([
+                'name' => $request->last_name,
+                'last_name' =>  $request->name,
+                'email' => $request->email,
+                'image' => $filenameToStore,
+                'phoneNo' => $request->phoneNo,
+                'city' => $request->city,
+                'zip' => $request->zip,
+                'about' => $request->about,
+            ]);
         } else {
-            $filenameToStore = "none";
+            DB::table('users')->where('id', $id)->update([
+                'name' => $request->last_name,
+                'last_name' =>  $request->name,
+                'email' => $request->email,
+                'phoneNo' => $request->phoneNo,
+                'city' => $request->city,
+                'zip' => $request->zip,
+                'about' => $request->about,
+            ]);
         }
 
-        DB::table('users')->where('id', $id)->update([
-            'name' => $request->last_name,
-            'last_name' =>  $request->name,
-            'email' => $request->email,
-            'image' => $filenameToStore,
-            'phoneNo' => $request->phoneNo,
-            'city' => $request->city,
-            'zip' => $request->zip,
-            'about' => $request->about,
-        ]);
+       
         
         return redirect()->back()->with('success', 'Ažuriranje uspješno');
     }

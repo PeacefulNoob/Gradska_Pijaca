@@ -6,6 +6,7 @@ use App\Ad;
 use App\Categories;
 use App\User;
 use App\Tag;
+use App\Like;
 use Illuminate\Support\Facades\Auth;
 
 use DB;
@@ -23,7 +24,7 @@ class AdController extends Controller
 
     public function __construct()
     {       
-         $this->middleware('approved')->except('show');
+         $this->middleware('approved')->except(['show', 'like']);
     }
     /**
      * Display a listing of the resource.
@@ -252,11 +253,16 @@ class AdController extends Controller
 
     public function like($id)
     {
-        $likePost = DB::table('likes')->insert([
+        $likePost = Like::updateOrCreate([
                 'user_id' => Auth::user()->id,
                 'ad_id' => $id
         ]);
-        return redirect()->back()->with('success', 'Ažuriranje uspješno');
+        if($likePost){
+            return redirect()->back()->with('success', 'Uspješno ste lajkovali oglas');
+        }else{
+            return redirect()->back()->with('error', 'Lajkovanje neuspješno');
+        }
+       
 
        
     }

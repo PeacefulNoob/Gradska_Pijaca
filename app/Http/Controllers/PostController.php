@@ -31,7 +31,7 @@ class PostController extends Controller
    
         $users = User::all();
         $categories = Categories_post::all();
-        return view('posts.blog_grid' , compact("posts","users","categories","posts"));
+        return view('posts.blog_grid' , compact("posts","users","categories"));
     
     }
 

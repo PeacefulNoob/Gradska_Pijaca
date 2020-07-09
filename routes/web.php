@@ -37,7 +37,7 @@ Route::get('/contact', function () {
 Route::get('/showLocation/{location}', 'CategoriesController@showLocation');
 
 Route::post('/posts/{post}/comments' , 'CommentController@store');
-Route::get('/like/{id}' , 'AdController@like');
+
 
 
 
@@ -50,10 +50,13 @@ Route::group(
     }
 );
 
+
+Route::get('/like/{id}' , 'AdController@like')->middleware("auth");
+
 Route::group(
     ['prefix' => 'user', 'middleware' => ['auth', 'approved']],
     function () {
-        
+      
         Route::get('/showUserBlogs/{id}', 'UsersController@showUserBlogs');
 
     }

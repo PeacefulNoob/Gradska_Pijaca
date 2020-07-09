@@ -36,11 +36,11 @@
 							<div class="card-body">
 								<div class="form-group">
 									<label class="form-label text-dark">Naziv Blog Objave</label>
-									<input type="text" name="title" class="form-control" placeholder="">
+									<input type="text" name="title" class="form-control" placeholder="" required>
 								</div>
 								<div class="form-group">
 									<label class="form-label text-dark">Kategorija</label>
-									<select name="cat_id" class="form-control custom-select">
+									<select name="cat_id" class="form-control custom-select" required>
 										<option value="0">Izaberite</option>
 										@foreach ($categories as $category)
 										<option value="{{$category->id}}">{{$category->title}}</option>
@@ -52,11 +52,11 @@
 						
 								<div class="form-group">
 									<label class="form-label text-dark">Opis</label>
-									<textarea class="form-control" name="body" rows="6" placeholder="Unesite opis ovde.."></textarea>
+									<textarea class="form-control" name="body" rows="6" placeholder="Unesite opis ovde.." required></textarea>
 								</div>
 								<div class="form-group">
 									<div class="custom-file">
-										<input type="file" class="custom-file-input" name="cover_image">
+										<input type="file" class="custom-file-input" name="cover_image" required>
 										<label class="custom-file-label">Izaberite sliku</label>
 									</div>
 								</div>

@@ -14527,6 +14527,8 @@ textarea[cols] {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    background-color: #f1eef7;
+    border-radius: 5px;
 }
 
 .custom-controls-stacked .custom-control {
@@ -21398,6 +21400,16 @@ dd {
     border-radius: 50px;
     color: #fff;
 }
+.item-card2-icons div {
+    width: 2rem;
+    display: inline-block;
+    height: 2rem;
+    text-align: center;
+    border-radius: 100px;
+    line-height: 2.1rem;
+    border-radius: 50px;
+    color: #fff;
+}
 
 .item-list .list-group-item {
     border: 0;
@@ -25334,4 +25346,7 @@ a.typewrite {
     .blog-list .item7-card-img {
         height: 100% !important;
     }
+}
+.bg-liked{
+    background-color: gold;
 }

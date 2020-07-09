@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categories_post;
 use Illuminate\Http\Request;
+use App\Post;
 
 class CategoriesPostController extends Controller
 {
@@ -49,11 +50,10 @@ class CategoriesPostController extends Controller
      */
     public function show($id)
     {
-    /*     $category = Categories_post::findOrFail($id);
-        $ads = Ad::where('cat_id',$id)->get();
-        $categories = Categories::all();
-        return view('all_ads', compact('ads','categories','category')); 
- */
+         $posts = Post::where('cat_id',$id)->get();
+        $categories = Categories_post::all();
+        return view('posts.blog_grid' , compact("posts","categories"));
+ 
     }
 
     /**

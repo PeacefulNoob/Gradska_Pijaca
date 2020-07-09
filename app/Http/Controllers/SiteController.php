@@ -57,7 +57,13 @@ class SiteController extends Controller
      */
     public function show($id)
     {
-        //
+        $ads = Ad::where('user_id',$id)->get();
+        $categories = Categories::all();
+        $ad_location= Ad::select('location')->distinct()->get();
+        $all_ads = Ad::all();
+
+
+        return view('all', compact('ads','categories','all_ads','ad_location'));
     }
 
     /**

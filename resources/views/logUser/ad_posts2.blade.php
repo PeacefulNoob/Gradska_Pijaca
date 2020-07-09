@@ -45,19 +45,19 @@
 												<div class="control-group form-group">
 													<div class="form-group">
 														<label class="form-label text-dark">Naziv oglasa</label>
-														<input type="text" name="title" class="form-control required Title" placeholder="">
+														<input type="text" name="title" class="form-control required Title" placeholder="" required>
 													</div>
 												</div>
 												<div class="control-group form-group">
 													<div class="form-group">
 														<label class="form-label text-dark">Lokacija</label>
-														<input type="text" name="location"  class="form-control required location" placeholder="">
+														<input type="text" name="location"  class="form-control required location" placeholder="" required>
 													</div>
 												</div>
 												<div class="control-group form-group">
 													<div class="form-group">
 														<label class="form-label text-dark">Kategorija</label>
-														<select name = "cat_id" class="form-control custom-select required category">
+														<select name = "cat_id" class="form-control custom-select required category" required>
 															<option value="0">Izaberite</option>
 															@foreach ($categories as $category)
 																
@@ -81,7 +81,7 @@
 {{-- 													{!! Form::select('tag[]', $tags, old('tag'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'id' => 'selectall-tag' ]) !!}
  --}}
 
-													<select name="tag[]" id="tag" class="form-control select2" id="selectall-tag" multiple >
+													<select name="tag[]" id="tag" class="form-control select2" id="selectall-tag" multiple required >
 														@foreach ($tags as $tag)
 														<option value="{{$tag->id}}">{{$tag->name}}</option>
 
@@ -98,7 +98,7 @@
 												</div>
 												<div class="control-group form-group">
 													<label class="form-label text-dark">Opis</label>
-													<textarea class="form-control required" name="description" rows="6" placeholder="Unesite opis oglasa.."></textarea>
+													<textarea class="form-control required" name="description" rows="6" placeholder="Unesite opis oglasa.." required></textarea>
 												</div>
 												<div class="control-group form-group">
 												

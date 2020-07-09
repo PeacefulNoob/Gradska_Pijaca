@@ -88,7 +88,7 @@
                                     @foreach ($categories as $category)
                                         
                                     <li class="list-group-item">
-                                        <a href="#" class="text-dark">
+                                        <a href="/categories_post/{{$category->id}}" class="text-dark">
                                             <i class="fa fa-building bg-primary text-primary"></i> {{$category->title}}
                                             <span
                                                 class="badgetext badge badge-pill badge-light mb-0 mt-1 mt-1">14</span>

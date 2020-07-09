@@ -35,7 +35,7 @@
                         </div>
                         <div class="item7-card-desc d-flex mb-2 mt-3">
                             <a href="#"><i class="fa fa-calendar-o text-muted mr-2"></i>{{ $post->user->created_at }}</a>
-                            <a href="#"><i class="fa fa-user text-muted mr-2"></i> {{ $post->user->name }}</a>
+                            <a href="/site/{{$post->user->id}}"><i class="fa fa-user text-muted mr-2"></i> {{ $post->user->name }}</a>
                             <div class="ml-auto">
                                 <a href="#"><i class="fa fa-comment-o text-muted mr-2"></i>2 Comments</a>
                             </div>
@@ -141,7 +141,7 @@
                                         @foreach($categories as $category)
 
                                             <li class="list-group-item">
-                                                <a href="#" class="text-dark">
+                                                <a href="/categories_post/{{ $category->id }}" class="text-dark">
                                                     <i class="fa fa-building bg-primary text-primary"></i>
                                                     {{ $category->title }}
                                                     <span

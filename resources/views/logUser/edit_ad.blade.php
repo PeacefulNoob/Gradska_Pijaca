@@ -51,7 +51,7 @@
 								<div class="form-group">
 									<label class="form-label text-dark">Kategorija</label>
 									<select name ="cat_id" class="form-control custom-select">
-										<option value="{{$ad->cat_id}}">{{$ad->cat_id}}</option>
+										<option value="{{$ad->cat_id}}">{{$ad->categories->title}}</option>
 								@foreach ($categories as $category)
 								<option value="{{$category->id}}">{{$category->title}}</option>
 								@endforeach

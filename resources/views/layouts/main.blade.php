@@ -63,6 +63,7 @@
     @include('layouts.header_bot')
 	<main >
 		@include('components.message')
+
 		@yield('content')
 	</main>
    @include('layouts.footer')

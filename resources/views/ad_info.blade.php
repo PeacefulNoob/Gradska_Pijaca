@@ -176,9 +176,9 @@
 						
 							<div class="card-body  item-user">
 								<div class="profile-pic mb-0">
-									<img src="../../assets/images/faces/male/25.jpg" class="brround avatar-xxl" alt="user">
+									<img src="/assets/images/user_images/{{$user->id}}" class="brround avatar-xxl" alt="user">
 									<div >
-									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">{{$user->name}} {{$user->last_name}}</h4></a>
+									<a href="/site/{{$user->id}}" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">{{$user->name}} {{$user->last_name}}</h4></a>
 										<span class="text-muted">Učlanio se  {{$user->created_at}}</span>
 								</div>
 
