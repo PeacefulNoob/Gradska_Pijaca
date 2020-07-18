@@ -28,7 +28,7 @@
 					<p class="leading-normal">Očigledno je da je naše tržište prezasićeno uvezenim, jeftinim proizvodima, koji se industrijski masovno proizvode, bez poznatog načina proizvodnje a sa ciljem ostvarenja dobiti na uštrb kvaliteta. </p>
 					<p class="leading-normal">Naš cilj je približiti rad malih i srednjih poljoprivrednih preduzeća i gazdinstava koji količinama i tehnologizacijom ne mogu parirati veletrgovinama. Preko naše “Gradske pijace” će se dobiti mogućnost prodaje i direktne komunikacije sa kupcima. Ovaj način prodaje i kupovine omogućava lakši dolazak do svježih, sezonskih, lokalno proizvedenih i kvalitetnih poljoprivrednih proizvoda. </p>
 					<p class="leading-normal">Korišćenjem gradske pijace ostvaruju se bolji uslovi kupoprodaje - direktan kontakt kupca i prodavca, izbor mjesta isporuke, načina plaćanja i povoljnije cijene, ostvarujući na taj način optimalan odnos između cijene i kvaliteta.</p>
-					<p class="leading-normal mb-0">Preko “Gradske pijace” ostavuje se uvid u trenutni asortiman poljoprivrednih proizvoda u okruzenju, a onda se i kroz nekoliko klikova oni i naruce. Pri čemu kroz direktan kontakt kupca i proizvođača oni imaju mogućnost upravljanja vlastitim vremenom.</p>
+					<p class="leading-normal mb-0">Preko “Gradske pijace” ostvaruje se uvid u trenutni asortiman poljoprivrednih proizvoda u okruženju, a onda se i kroz nekoliko klikova oni i naruče. Pri čemu kroz direktan kontakt kupca i proizvođača oni imaju mogućnost upravljanja vlastitim vremenom.</p>
 				</div>
 			</div>
 		</section>
@@ -114,7 +114,7 @@
 			<div class="container">
 				<div class="section-title center-block text-center">
 					<h2>Zašto “Gradska pijaca”?</h2>
-					<p>Kupovinom na našem sajutu postiže se najbilji odnos izmedžu cijene I kvaliteta proizvoda, podspješuje se razvoj lokalnih proizvođača.</p>
+					<p>Kupovinom na našem sajutu postiže se najbolji odnos izmedju cijene i kvaliteta proizvoda, podspješuje se razvoj lokalnih proizvođača.</p>
 				</div>
 				<div class="row ">
 					<div class="col-md-6 col-lg-4 features">
@@ -124,8 +124,8 @@
 									<div class="fa-stack fa-lg  fea-icon bg-success mb-3">
 										<i class="fa fa-bullhorn  text-white"></i>
 									</div>
-									<h3>Provide Free Ads</h3>
-									<p>svježi i kvalitetni poljoprivredni proizvodi</p>
+									<h3>Svježina</h3>
+									<p>Svježi i kvalitetni poljoprivredni proizvodi</p>
 								</div>
 							</div>
 						</div>
@@ -137,8 +137,8 @@
 									<div class="fa-stack fa-lg  fea-icon bg-primary mb-3">
 										<i class="fa fa-heart  text-white"></i>
 									</div>
-									<h3>Best Ad Ratings</h3>
-									<p>sezonsko voće i povrće koje će imati bolji ukus, kvalitet i hranljivu vrijednost od industrijski masovno proizvedenih plasiranih proizvoda u veleprodaji</p>
+									<h3>Sezonsko voće i povrće</h3>
+									<p>Sezonsko voće i povrće koje će imati bolji ukus, kvalitet i hranljivu vrijednost od industrijski masovno proizvedenih plasiranih proizvoda u veleprodaji</p>
 								</div>
 							</div>
 						</div>
@@ -150,8 +150,8 @@
 									<div class="fa-stack fa-lg  fea-icon bg-secondary mb-3">
 										<i class="fa fa-bookmark  text-white"></i>
 									</div>
-									<h3>Provide Post Features</h3>
-									<p>povoljni uslovi razmjene – kupci i prodavci se dogovaraju o izboru načina dostave i plaćanja.</p>
+									<h3>Povoljni uslovi razmjene</h3>
+									<p>Povoljni uslovi razmjene – kupci i prodavci se dogovaraju o izboru načina dostave i plaćanja.</p>
 								</div>
 							</div>
 						</div>
@@ -163,8 +163,8 @@
 									<div class="fa-stack fa-lg  fea-icon bg-warning mb-3">
 										<i class="fa fa-line-chart   text-white"></i>
 									</div>
-									<h3>See  your Ad Progress</h3>
-									<p>upoznavanje proizvodjaca kroz direktan kontakt i uvid u način proizvodnje, što dodatno stvara veći nivo međusobnog povjerenja.</p>
+									<h3>Upoznavanje</h3>
+									<p>Upoznavanje proizvodjača kroz direktan kontakt i uvid u način proizvodnje, što dodatno stvara veći nivo međusobnog povjerenja.</p>
 								</div>
 							</div>
 						</div>
@@ -176,8 +176,8 @@
 									<div class="fa-stack fa-lg  fea-icon bg-danger mb-3">
 										<i class="fa fa-handshake-o   text-white"></i>
 									</div>
-									<h3>User Friendly</h3>
-									<p>-kupovina lokalno proizvedenih autetičnih proizvoda</p>
+									<h3>Autetični proizvodi</h3>
+									<p>Kupovina lokalno proizvedenih autetičnih proizvoda</p>
 								</div>
 							</div>
 						</div>
@@ -190,7 +190,7 @@
 										<i class="fa fa-phone  text-white"></i>
 									</div>
 									<h3>24/7 Support</h3>
-									<p>our being able to do what we like best, every pleasure is to be welcomed and every pain.</p>
+									<p>Zour being able to do what we like best, every pleasure is to be welcomed and every pain.</p>
 								</div>
 							</div>
 						</div>
@@ -206,7 +206,7 @@
 				<h2 class="mb-4">Koristi za prodavce</h2>
 				<p class="leading-normal">Preko sajta “Gradska pijaca” proizvođači će moći da predstave i prodaju vlastite domaće poljoprivredne proizvode na jednostavan način. Tako će se postavljaju na mapu trzišta i postaju konkurentniji.  </p>
 				<p class="leading-normal">Omogućava im da približe i opisu način rada i njihovih proizvoda, predstavljanje proizvoda na njima svojstven način i pravljenje imidža i prepoznatljivosti njihovog proizvoda, kao i planiranje i upravljanje prodajom i proizvodnjom. </p>
-				<p class="leading-normal">Gradska pijaca” namijenjena je porvobitno poljoprivrednim proizvodjacima, prodavcima poljoprivrednih proizvoda i kupcima tj potrošača domaćih poljopriverdnih proizvoda</p>
+				<p class="leading-normal">Gradska pijaca” namijenjena je prvobitno poljoprivrednim proizvodjačima, prodavcima poljoprivrednih proizvoda i kupcima tj potrošača domaćih poljopriverdnih proizvoda</p>
 			</div>
 		</div>
 	</section>

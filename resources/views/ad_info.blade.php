@@ -215,11 +215,9 @@
 							</div>
 							<div class="card-body product-filter-desc">
 								<div class="product-filter-icons text-center">
-									<a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-									<a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-									<a href="#" class="google-bg"><i class="fa fa-google"></i></a>
-									<a href="#" class="dribbble-bg"><i class="fa fa-dribbble"></i></a>
-									<a href="#" class="pinterest-bg"><i class="fa fa-pinterest"></i></a>
+									<a href="https://www.facebook.com/gradska.pijaca" class="facebook-bg" target="_blank"><i class="fa fa-facebook"></i></a>
+									<a href="https://www.instagram.com/gradska.pijaca/" class="pinterest-bg" target="_blank" ><i class="fa fa-instagram"></i></a>
+
 								</div>
 							</div>
 						</div>

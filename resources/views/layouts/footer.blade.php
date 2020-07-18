@@ -8,7 +8,7 @@
 								<h6>O nama</h6>
 								<hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
 								<p>Ova online prodavnica, osmišljena je tako da bude dostupna i jednostavna za korisćenje sa osnovnim poznavanjem  interneta.</p>
-                                <p>Kupovinom na našem sajutu postiže se najbilji odnos izmedžu cijene I kvaliteta proizvoda, podspješuje se razvoj lokalnih proizvođača.</p>
+                                <p>Kupovinom na našem sajutu postiže se najbilji odnos izmedžu cijene i kvaliteta proizvoda, podspješuje se razvoj lokalnih proizvođača.</p>
 							</div>
 							<div class="col-lg-2 col-md-12">
 								<h6>Naše usluge</h6>
@@ -16,8 +16,7 @@
 								<ul class="list-unstyled mb-0">
 									<li><a href="/contact">Kontakt</a></li>
 									<li><a href="/about">O nama</a></li>
-									<li><a href="#">Blog</a></li>
-									<li><a href="#">Terms and Services</a></li>
+									<li><a href="/post">Blog</a></li>
 								</ul>
 							</div>
 
@@ -26,10 +25,10 @@
 								<hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
 								<ul class="list-unstyled mb-0">
 									<li>
-										<a href="#"><i class="fa fa-home mr-3 text-primary"></i> New York, NY 10012, US</a>
+										<a href="#"><i class="fa fa-home mr-3 text-primary"></i> Podgorica, Crna Gora</a>
 									</li>
 									<li>
-										<a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> info12323@example.com</a></li>
+										<a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> gradskapijaca2020@gmail.com </a></li>
 									<li>
 										<a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 069 964 834</a>
 									</li>
@@ -37,25 +36,17 @@
 								</ul>
 								<ul class="list-unstyled list-inline mt-3">
 									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
+									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light" href="https://www.facebook.com/gradska.pijaca" target="_blank">
 										<i class="fa fa-facebook bg-facebook"></i>
 									  </a>
 									</li>
 									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-										<i class="fa fa-twitter bg-info"></i>
+									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light" href="https://www.instagram.com/gradska.pijaca/" target="_blank">
+										<i class="fa fa-instagram bg-info"></i>
 									  </a>
 									</li>
-									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-										<i class="fa fa-google-plus bg-danger"></i>
-									  </a>
-									</li>
-									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-										<i class="fa fa-linkedin bg-linkedin"></i>
-									  </a>
-									</li>
+							
+							
 								</ul>
 							</div>
 							<div class="col-lg-4 col-md-12">

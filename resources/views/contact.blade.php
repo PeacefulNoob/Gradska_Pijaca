@@ -32,21 +32,21 @@
 								<div class="support-service bg-primary br-2 mb-4 mb-xl-0">
 									<i class="fa fa-phone"></i>
 									<h6>+382 69 96 48 34</h6>
-									<P>Kontakt!</P>
+									<P>Kontakt</P>
 								</div>
 							</div>
 							<div class="col-12 mb-5">
 								<div class="support-service bg-secondary br-2 mb-4 mb-xl-0">
 									<i class="fa fa-clock-o"></i>
 									<h6>24/7</h6>
-									<p>Radni sati!</p>
+									<p>Radni sati</p>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="support-service bg-warning br-2">
 									<i class="fa fa-envelope-o"></i>
-									<h6>yourdomain@gmail.com</h6>
-									<p>E-mail!</p>
+									<h6>gradskapijaca2020@gmail.com</h6>
+									<p>E-mail</p>
 								</div>
 							</div>
 						</div>
@@ -59,18 +59,22 @@
 								</div>
 								<div class="wrapper wrapper2">
 									<div class="card mb-0">
-										<div class="card-body">
-											<div class="form-group">
-												<input type="text" class="form-control" id="name1" placeholder="Vaše ime">
+										<form action="{{route('contact.store.main')}}" method="post">
+											{{ csrf_field() }}
+											<div class="card-body">
+												<div class="form-group">
+													<input type="text" class="form-control" name="name" id="name1" placeholder="Vaše ime">
+												</div>
+												<div class="form-group">
+													<input type="email" class="form-control" name="email"  id="email" placeholder="Vaša Email adresa">
+												</div>
+												<div class="form-group">
+													<textarea class="form-control" name="message" rows="6" placeholder="Vaša poruka"></textarea>
+												</div>
+												<input type="submit" value="Pošalji poruku" class="btn btn-primary py-3 px-4">
 											</div>
-											<div class="form-group">
-												<input type="email" class="form-control" id="email" placeholder="Email adresa">
-											</div>
-											<div class="form-group">
-												<textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Message"></textarea>
-											</div>
-											<a href="#" class="btn btn-primary">Pošaljite poruku</a>
-										</div>
+										</form>
+
 									</div>
 								</div>
 							</div>

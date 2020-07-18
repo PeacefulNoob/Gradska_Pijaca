@@ -9,6 +9,20 @@
 		<meta name="author" content="QQRIQ PeacefulNoob">
 		<meta name="keywords" content="Gradska Pijaca">
 		
+		
+		<meta property="og:image" content="https://www.gradskapijaca.com/assets/images/brand/logoKrofna.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://gradskapijaca.com/" />
+		<meta property="og:title" content="Gradska Pijaca" />
+		<meta property="og:description" content="Posjetite nas i pronađite što želite!" />
+
+ 		
+			<link rel="icon" type="image/png" href="assets/images/brand/logoKrofna.png" />
+		<link rel="apple-touch-icon-precomposed" href="assets/images/brand/logoKrofna.png" type="image/png" sizes="152x152" />
+		<link rel="apple-touch-icon-precomposed" href="assets/images/brand/logoKrofna.png" type="image/png" sizes="120x120" />
+		<link rel="apple-touch-icon" href="assets/images/brand/logoKrofna.png" sizes="180x180" />
+	  
+		
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
@@ -96,11 +110,7 @@
 		<!--Horizontal Menu-->
 		<script src="/assets/plugins/Horizontal2/Horizontal-menu/horizontal.js"></script>
 
-		<!--Counters -->
-		<script src="/assets/plugins/counters/counterup.min.js"></script>
-		<script src="/assets/plugins/counters/waypoints.min.js"></script>
-		<script src="/assets/plugins/counters/numeric-counter.js"></script>
-
+		
 		<!--JQuery TouchSwipe js-->
 		<script src="/assets/js/jquery.touchSwipe.min.js"></script>
 
@@ -108,9 +118,6 @@
 		<script src="/assets/plugins/select2/select2.full.min.js"></script>
 		<script src="/assets/js/select2.js"></script>
 
-		<!-- Cookie js -->
-		<script src="/assets/plugins/cookie/jquery.ihavecookies.js"></script>
-		<script src="/assets/plugins/cookie/cookie.js"></script>
 
         <!-- Custom scroll bar Js-->
 		<script src="/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -118,9 +125,7 @@
 		<!-- sticky Js-->
 		<script src="/assets/js/sticky.js"></script>
 
-		<!-- video -->
-		<script src="/assets/plugins/video/jquery.vide.js"></script>
-
+	
 		<!-- Swipe Js-->
 		<script src="/assets/js/swipe.js"></script>
 

@@ -30,10 +30,11 @@ Route::get('/about', function () {
 Route::get('/', 'SiteController@index')->name('welcome');
 
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-   
+Route::get('/contact', 'ContactController@create');
+Route::post('Gradska-Kontakt', [
+    'uses' => 'ContactController@store',
+    'as' => 'contact.store.main'
+]);
 Route::get('/showLocation/{location}', 'CategoriesController@showLocation');
 
 Route::post('/posts/{post}/comments' , 'CommentController@store');

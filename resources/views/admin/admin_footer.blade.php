@@ -37,9 +37,7 @@
 		<!-- Custom scroll bar Js-->
 		<script src="../../assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
 
-		<!--Counters -->
-		<script src="../../assets/plugins/counters/counterup.min.js"></script>
-		<script src="../../assets/plugins/counters/waypoints.min.js"></script>
+		
 
 
 		<!-- Custom Js-->

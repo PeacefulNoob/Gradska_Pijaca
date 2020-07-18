@@ -86,7 +86,14 @@
 
             @else
                 <div class="post-comments">
-                    <p>Nema Komentara</p>
+                    <div class="card-body p-0">
+                        <div class="media mt-0 p-5">
+                            <div class="media-body">
+
+                                <p>Nema Komentara</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
                 @endif

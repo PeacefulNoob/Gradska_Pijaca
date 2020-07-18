@@ -6,17 +6,11 @@
 			<section class="section-first bg-background-6" >
 				<div class="header-text text mb-0">
 					<div class="container">
-						<div class="text-center text-white ">
-							<h1 class="">Pronađite oglas</h1>
-						</div>
+					
 						<div class="row">
 							<div class="col-xl-8 col-lg-12 col-md-12 d-block mx-auto">
 								<div class="item-search-tabs">
-									<div class="item-search-menu">
-										<ul class="nav">
-											<li class=""><a href="#index1" class="active" data-toggle="tab">Oglasi</a></li>
-										</ul>
-									</div>
+								
 									@include('components.search')
 
 								</div>
@@ -75,6 +69,10 @@
 				</div>
 				<div class="row">
 					@if(count($ads) > 0)
+					<?php
+					$colcount = count($ads);
+					$i = 1;
+					?>
 					@foreach ($ads as $ad)
 						
 				
@@ -133,7 +131,10 @@
 							</div>
 						</div>
 					</div>
-				
+					<?php	
+					if ($i++ == 9)
+					break;
+				  ?>
 				@endforeach
 						@else
 						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
@@ -231,25 +232,23 @@
 								<a href="/post/{{$post->id}}" class="text-dark"><h4 class="fs-20">{{$post->title}}</h4></a>
 								<p>{{$post->body}}</p>
 								<div class="d-flex align-items-center pt-2 mt-auto">
-									<img src="/assets/images/faces/male/5.jpg" class="avatar brround avatar-md mr-3" alt="avatar-img">
+									<img src="/assets/images/user_images/{{$post->user->image}}" class="avatar brround avatar-md mr-3" alt="avatar-img">
 									<div>
-										<a href="#" class="text-default">{{$post->user->name}} {{$post->user->last_name}}</a>
+										<a href="/site/{{$post->user->id}}" class="text-default">{{$post->user->name}} {{$post->user->last_name}}</a>
 										<small class="d-block text-muted">{{$post->created_at}}</small>
 									</div>
-									<div class="ml-auto text-muted">
-										<a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fa fa-thumbs-o-up"></i></a>
-									</div>
+								
 								</div>
 							</div>
 						</div>
 					</div>
 					
 					@endforeach
-@else 
-<div class="item">
-<h2>Nema Blog Objave</h2>
-</div>
-@endif
+					@else 
+					<div class="item">
+					<h2>Nema Blog Objave</h2>
+					</div>
+					@endif
 				</div>
 			</div>
 		</section>

@@ -18,7 +18,7 @@
                             <ul class="custom">
                                 @guest
                                 <li class="nav-item">
-                                    <a href="/login" class="text-dark"><i class="fa fa-sign-in mr-1"></i> <span>Login</span></a>
+                                    <a href="/login" class="text-dark"><i class="fa fa-sign-in mr-1"></i> <span>Prijava</span></a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
