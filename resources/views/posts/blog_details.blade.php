@@ -101,7 +101,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Napišite svoj komentar</h3>
                         </div>
-                        <form class="post-reply" method="POST" action="/posts/{{ $post->id }}/comments">
+                        <form class="post-reply" method="POST" action="/posts/{{$post->id}}/comments">
                             {{ csrf_field() }}
                             <div class="card-body">
                                     <div class="form-group">

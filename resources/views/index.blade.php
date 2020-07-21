@@ -42,9 +42,7 @@
 							<div class="card-body">
 								<div class="cat-item text-center">
 									<a  href="/categories/{{$category->id}}"></a>
-									<div class="cat-img">
-										<img src="/assets//images/products/categories/dress.png" alt="img">
-									</div>
+								
 									<div class="cat-desc">
 										<h5 class="mb-1">{{$category->title}}</h5>
 {{-- 										<small class="badge badge-pill badge-primary mr-2">32</small><span class="text-muted">ads are posted</span>

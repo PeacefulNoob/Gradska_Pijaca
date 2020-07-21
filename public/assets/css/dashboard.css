@@ -1683,7 +1683,7 @@ pre code {
 
     .sticky-wrapper.is-sticky .horizontalMenu>.horizontalMenu-list>li>a.active {
         background-color: #ec296b;
-        color: #fff;
+        color: rgb(0, 0, 0);
     }
 
     .sticky-wrapper.is-sticky .horizontalMenu>.horizontalMenu-list>li>a {
@@ -3432,6 +3432,7 @@ select.form-control-lg:not([size]):not([multiple]) {
     right: 0;
     text-align: center;
     top: 45%;
+    width: 6%;
     margin: 0 auto;
 }
 
@@ -24143,7 +24144,7 @@ footer .border-top {
 }
 
 .horizontal-main {
-    background: rgb(0, 0, 0, .3);
+    background: #fff;
 }
 
 .horizontalMenu>.horizontalMenu-list {
@@ -24155,7 +24156,7 @@ footer .border-top {
 }
 
 .horizontalMenu>.horizontalMenu-list>li>a {
-    color: #fff;
+    color: #000;
 }
 
 .horizontalMenu>.horizontalMenu-list>li>a.btn {
@@ -24164,19 +24165,19 @@ footer .border-top {
 }
 
 .horizontalMenu>.horizontalMenu-list>li>a>.fa {
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .horizontalMenu>.horizontalMenu-list>li>a.active .fa {
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .horizontalMenu>.horizontalMenu-list>li:hover>a>.fa {
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .horizontalMenu>.horizontalMenu-list>li>a:hover .fa {
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li a i {

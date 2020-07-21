@@ -70,7 +70,7 @@
 
     <!--Loader-->
     <div id="global-loader">
-        <img src="/assets/images/products/products/loader.png" class="loader-img floating" alt="">
+        <img src="/assets/images/brand/logoKrofna.png" class="loader-img floating" alt="Pocetna">
     </div>
     @include('layouts.header_top')
     @include('layouts.mobile_header')

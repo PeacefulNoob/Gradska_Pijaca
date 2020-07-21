@@ -50,7 +50,7 @@ class CategoriesPostController extends Controller
      */
     public function show($id)
     {
-         $posts = Post::where('cat_id',$id)->get();
+        $posts = Post::where('cat_id',$id)->get();
         $categories = Categories_post::all();
         return view('posts.blog_grid' , compact("posts","categories"));
  
