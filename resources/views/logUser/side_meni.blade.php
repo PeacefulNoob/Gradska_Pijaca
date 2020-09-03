@@ -10,9 +10,9 @@
                         title="online"></span>
                     <img src="/assets/images/user_images/{{ Auth::user()->image }}" class="brround" alt="user">
                 </div>
-                <a href="userprofile.html" class="text-dark">
+              
                     <h4 class="mt-3 mb-0 font-weight-semibold">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h4>
-                </a>
+              
             </div>
         </div>
         <div class="item1-links  mb-0">

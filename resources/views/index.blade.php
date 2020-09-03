@@ -93,7 +93,7 @@
 								<div  class="item-card2-icons-r bg-liked"><i class="fa fa fa-heart-o"></i></div>
 
 								@else
-								<a href="like/{{$ad->id}}" class="item-card2-icons-r bg-secondary"><i class="fa fa fa-heart-o"></i></a>
+								<a href="/like/{{$ad->id}}" class="item-card2-icons-r bg-secondary"><i class="fa fa fa-heart-o"></i></a>
 								@endif
 							</div>
 							<div class="card-body pb-0">

@@ -83,8 +83,20 @@
 																<a href="/ad/{{$ad->id}}"></a>
 																<img src="/assets/images/ad_images/{{$ad->image}}" alt="img" class="cover-image">
 															</div>
-															<div class="item-card9-icons">
-																<a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>
+															<div class="item-card2-icons">
+																@php
+																$check = \App\Like::where([
+																	['user_id', Auth::id()],
+																	['ad_id' , $ad->id]
+																	])->first()	;
+																
+																@endphp
+																@if($check)
+																<div  class="item-card2-icons-r bg-liked"><i class="fa fa fa-heart-o"></i></div>
+								
+																@else
+																<a href="/like/{{$ad->id}}" class="item-card2-icons-r bg-secondary"><i class="fa fa fa-heart-o"></i></a>
+																@endif
 															</div>
 														</div>
 														<div class="card-body">

@@ -41,7 +41,6 @@ class CommentController extends Controller
      */
     public function store(Post $post)
     {
-        dd("sadasd");
         
         $this->validate(request(), [
             'name' => 'required|min:3',

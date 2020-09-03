@@ -3,7 +3,7 @@
 @section('content')
 		<!--Sliders Section-->
 		<div>
-			<div class="cover-image sptb-1 bg-background" data-image-src="../../assets/images/banners/banner1.jpg">
+			<div class="cover-image sptb-1 bg-background trala" data-image-src="../../assets/images/banners/banner1.jpg">
 				<div class="header-text1 mb-0">
 					<div class="container">
 						<div class="row">

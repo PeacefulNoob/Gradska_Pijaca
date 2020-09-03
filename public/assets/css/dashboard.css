@@ -608,9 +608,13 @@ mark {
     background-size: cover !important;
     width: 100%;
     position: relative;
-    height: 290px;
+    height: 220px;
 
     object-fit: cover;
+}
+
+.trala {
+    padding: 10rem 0 10rem 0 !important;
 }
 
 .img-thumbnail {
@@ -22598,7 +22602,7 @@ footer .border-top {
 }
 
 .bannerimg {
-    padding: 10rem 0 3rem 0;
+    padding: 10rem 0 9rem 0;
     background-size: cover;
 }
 

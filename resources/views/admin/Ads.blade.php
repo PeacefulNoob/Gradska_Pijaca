@@ -29,9 +29,7 @@
 						
 						<li>
 							<a class="side-menu__item" href="/admin/1"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Lista Oglasa</span></a></li>
-							<li>
-								<a class="side-menu__item" href="/admin/users_all"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Lista Korisnika</span></a></li>
-				
+							
 					
                     </ul>
 				</aside>

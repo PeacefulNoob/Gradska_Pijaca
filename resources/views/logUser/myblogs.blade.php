@@ -37,7 +37,6 @@
                                     <table class="table table-bordered table-hover mb-0 text-nowrap">
                                         <thead>
                                             <tr>
-                                                <th></th>
                                                 <th>Blog Objava</th>
                                                 <th>Kategorija</th>
                                                 <th>Status</th>
@@ -49,13 +48,7 @@
                                                 
                                          
                                             <tr>
-                                                <td>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            name="checkbox" value="checkbox">
-                                                        <span class="custom-control-label"></span>
-                                                    </label>
-                                                </td>
+                                             
                                                 <td>
                                                     <div class="media mt-0 mb-0">
                                                         <div class="card-aside-img">
@@ -73,7 +66,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>{{-- {{$ad->$category->title}} --}}</td>
+                                                <td> {{$post->categories_post->title}}</td>
                                                 <td>
                                                     <a href="#" class="badge badge-warning">Published</a>
                                                 </td>

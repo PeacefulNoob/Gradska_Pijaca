@@ -3,7 +3,7 @@
 @section('content')
 <!--Breadcrumb-->
 <section>
-    <div class="bannerimg cover-image bg-background3" data-image-src="../../assets/images/banners/banner2.jpg">
+    <div class="bannerimg trala cover-image bg-background3" data-image-src="../../assets/images/banners/banner2.jpg">
         <div class="header-text mb-0">
             <div class="container">
                 <div class="text-center text-white">
@@ -35,8 +35,8 @@
                                 <a href="/post/{{$post->id}}"></a>
                                 <img src="/assets/images/post_images/{{$post->cover_image}}" alt="img" class="cover-image">
                                 <div class="item7-card-text">
-                                    <span class="badge badge-info">{{ $post->categories_post->title }}</span>
-                                </div>
+{{--                                     <span class="badge badge-info">{{ $post->categories_post->title }}</span>
+ --}}                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="item7-card-desc d-flex mb-2">
